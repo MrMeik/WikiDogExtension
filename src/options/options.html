@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+      body {
+        margin: 2rem auto;
+        max-width: 36rem;
+        padding: 0 1rem;
+        font-family: system-ui, sans-serif;
+        line-height: 1.45;
+        background: Canvas;
+        color: CanvasText;
+      }
+      label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.35rem;
+      }
+      input {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0.5rem;
+        font: inherit;
+      }
+      .row {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+      }
+      button {
+        font: inherit;
+        padding: 0.4rem 0.8rem;
+      }
+      #status {
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DogOnline Wiki Tracker</h1>
+    <p>
+      Paste the API token you were given you were given below upload your
+      interactions to the data tracking sheet:
+      <a
+        href="https://docs.google.com/spreadsheets/d/1SDBlNBxuKEcM4mcVM6eR3U7lMW6jObvjGunr-V6KZ1o/edit?usp=sharing"
+      >
+        Google Sheet
+      </a>
+    </p>
+    <form id="token-form">
+      <label for="token">API token</label>
+      <input
+        id="token"
+        name="token"
+        type="password"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <div class="row">
+        <button type="submit">Save token</button>
+      </div>
+    </form>
+    <p id="status" role="status"></p>
+    <script src="options.js"></script>
+  </body>
+</html>
