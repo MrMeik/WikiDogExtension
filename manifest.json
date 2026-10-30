@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "DogOnline Tracker",
+  "name": "WikiDog - DogOnline Action Logger",
   "version": "0.1.0",
-  "description": "Records what happens in Dog Online. Fishing is logged now; tower and gachapon plug into the same trackers.",
+  "description": "Unoffical extension that gathers information about DogOnline interactions with fishing, gachapon, mob kills and opening chests",
   "permissions": ["storage"],
   "host_permissions": ["https://wikidogbackend.onrender.com/*"],
   "options_ui": {
