@@ -46,6 +46,7 @@
     }
   }
 
+  // tracks global state for the application and providees high level functionality to the other scripts
   const DogTracker = {
     EXT_VERSION: browserApi.runtime.getManifest().version,
 

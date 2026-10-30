@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "Records what happens in Dog Online. Fishing is logged now; tower and gachapon plug into the same trackers.",
   "permissions": ["storage"],
-  "host_permissions": ["http://127.0.0.1:8787/*"],
+  "host_permissions": ["https://wikidogbackend.onrender.com/*"],
   "options_ui": {
     "page": "src/options/options.html",
     "open_in_tab": true

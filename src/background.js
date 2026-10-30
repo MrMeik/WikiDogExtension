@@ -5,7 +5,7 @@
 (() => {
   "use strict";
 
-  const API_BASE_URL = "http://127.0.0.1:8787";
+  const API_BASE_URL = "https://wikidogbackend.onrender.com";
   const RECORDS_PATH = "/v1/records";
   const TOKEN_KEY = "apiToken";
   const TOKEN_STATE_KEY = "tokenState";
