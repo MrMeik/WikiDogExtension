@@ -9,6 +9,9 @@
     "page": "src/options/options.html",
     "open_in_tab": true
   },
+  "icons": {
+    "128": "wikidog_icon.png"
+  },
   "background": {
     "service_worker": "src/background.js"
   },
@@ -38,7 +41,7 @@
   ],
   "browser_specific_settings": {
     "gecko": {
-      "id": "dogonline-tracker@example.invalid",
+      "id": "dogonline-tracker@wikidog.mrmeik",
       "strict_min_version": "128.0"
     }
   }
