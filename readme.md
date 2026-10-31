@@ -18,7 +18,7 @@ Supported platform are current chrome and firefox on desktop as well as firefox 
 4. Tap the `Firefox Logo` 5 times in succession to `enable developer mode`. You should see a message at the bottom of the screen to indicate success and will also now see more options in your settings menus.
 5. Go back to `Settings` and click `Install extension from file` from under the `Advanced` options section.
 6. Select the downloaded release `.xpi` file and click `Add` when prompted. You will then be brought to the WikiDog extension page.
-7. You will now need input your API token to begin sending data to the backend. To do so, click the `Settings` button on the WikiDog extension page to be brought to a page where you can enter your API token. `Paste in your token` and press `Save token`.
+7. You will now need input your API token (currently API tokens must be requested directly from MrMeik) to begin sending data to the backend. To do so, click the `Settings` button on the WikiDog extension page to be brought to a page where you can enter your API token. `Paste in your token` and press `Save token`.
 8. Under the `Pemissions` menu on the WikiDog extension page ensure each optional permission is selected.
 9. You should now be able to play DogOnline like normal and gameplay statistics will be reported automatically.
 
@@ -26,7 +26,7 @@ Supported platform are current chrome and firefox on desktop as well as firefox 
 
 - If you need to access the settings for the WikiDog extension again, click the `triple dots icon` and click the `extensions` option to see your installed extensions. `WikiDog` can be found in the list there.
 - Ensure that you have saved your API token for the extension after installation. Follow step 7 for details.
-- Under the `Permissions` menu in the WikiDog extension page, ensure that both of the optional permissions are enabled as data can only be sent to the backend if the wikidogbackend url is enabled.
+- Under the `Permissions` menu in the WikiDog extension page, ensure that both of the optional permissions are enabled as data can only be sent to the backend if the `wikidogbackend` url is enabled.
 
 ## Looking to contribute?
 
