@@ -12,7 +12,7 @@ Supported platform are current chrome and firefox on desktop as well as firefox 
 
 ### Firefox Mobile Installation
 
-1. Download the latest firefox release from the releases section on Github.
+1. Download the latest firefox release from the [releases section](https://github.com/MrMeik/WikiDogExtension/releases) on Github.
 2. Next, you will need to `enable developer mode` in firefox. First open up firefox on mobile and click the `triple dots icon` to open the Firefox menu and select the `Settings` option.
 3. Click on the `About Firefox` option from the settings menu.
 4. Tap the `Firefox Logo` 5 times in succession to `enable developer mode`. You should see a message at the bottom of the screen to indicate success and will also now see more options in your settings menus.
