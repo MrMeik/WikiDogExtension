@@ -6,9 +6,23 @@ This extension aims to automate the collection of data from various activities i
 
 Once you install the extension it will begin logging information to your console only. To begin sending data to the backend server, you will need to request an API key. Then you will need to click on the extension icon and click options to be brought to a page where you can enter your API key. At this point, you can just continue playing the game like normal. Your actions will automatically be sent to the google sheet.
 
+## What is tracked and where can it be found
+
+This version of the extension tracks Mob kills, Chest opens, Gachapon opens and Fishing caches. The data is uploaded to this [google sheet](https://docs.google.com/spreadsheets/d/1SDBlNBxuKEcM4mcVM6eR3U7lMW6jObvjGunr-V6KZ1o/edit?usp=sharing).
+
 ## Installing the extension
 
 Supported platform are current chrome and firefox on desktop as well as firefox on mobile
+
+### Chrome Desktop Installation
+
+1. Download the latest Chrome release in the [releases section](https://github.com/MrMeik/WikiDogExtension/releases) and unzip the zipped folder.
+2. Navigate to the extensions page at `chrome://extensions`.
+3. Enable `Developer mode` via the toggle in the top right corner of the page.
+4. Click `Load unpacked` to and select the folder you unzipped in step 1.
+5. Click the `Details` button and then the `Extension options` button to be brought to a page to enter your API key.
+6. Paste in your token and click `Save token` to complete setup.
+7. Refresh your DogOnline page and your gameplay statistics will now be reported automatically.
 
 ### Firefox Mobile Installation
 
