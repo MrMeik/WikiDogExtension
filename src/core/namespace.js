@@ -54,6 +54,11 @@
     records: [],
     out: console,
 
+    clearMemory() {
+      this.context = {};
+      this.records = [];
+    },
+
     // register a tracker to extension
     register(tracker) {
       const procedures = valiateAndExtractTrackerProcedures(

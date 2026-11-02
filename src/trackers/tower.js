@@ -6,6 +6,14 @@
 
   const SCHEMA_VERSION = 1;
 
+  const CHEST_NAMES = [
+    "ABSOLUTELY ENOURMOUS treasure chest", // "You found an ABSOLUTELY ENOURMOUS treasure chest!!"
+    "Treasure chest", // "You found a treasure chest!"
+    "Dusty old bookshelf", // "You stumble upon a dusty old bookshelf."
+    "Forgotten cooler", // "You stumble upon a forgotten cooler."
+    "Nasty pile of slop", // "You stumble upon a nasty pile of slop."
+  ];
+
   function wasMobKilled(ui) {
     const mobPortrait = ui?.mobPortrait;
 
@@ -31,11 +39,46 @@
     return treasureButtons.visible && treasureButtons.showDismiss;
   }
 
-  function getDroppedItems(ui) {
+  function foundTreasureChest(ui) {
+    const treasureButtons = ui?.treasureButtons;
+
+    if (treasureButtons === null) {
+      return false;
+    }
+
+    return treasureButtons.visible && treasureButtons.showOpenChest;
+  }
+
+  function extractDroppedItems(ui) {
     return (ui?.lootDisplay?.items ?? []).map((item) => item?.name);
   }
 
-  function getEnemyName(ui) {
+  function extractTextStatic(ui) {
+    return ui?.textStatic?.visible === true ? (ui?.textStatic?.text ?? "") : "";
+  }
+
+  function extractChestName(ui) {
+    const messageText = extractTextStatic(ui);
+
+    if (messageText === "") {
+      DogTracker.warn(
+        "Unable to extract chest name from textbox",
+        ui?.textStatic,
+      );
+      return null;
+    }
+
+    const lowerCaseMessage = messageText.toLowerCase();
+    for (const chestOption of CHEST_NAMES) {
+      if (lowerCaseMessage.includes(chestOption.toLowerCase())) {
+        return chestOption;
+      }
+    }
+
+    return null;
+  }
+
+  function extractEnemyName(ui) {
     return Helpers.extractFilename(ui?.mobPortrait?.image);
   }
 
@@ -65,24 +108,29 @@
 
     // check for mob being killed
     if (wasMobKilled(ui)) {
-      const droppedItems = getDroppedItems(ui);
-      const enemyName = getEnemyName(ui);
+      const droppedItems = extractDroppedItems(ui);
+      const enemyName = extractEnemyName(ui);
 
       records.push({
         ...baseRecord(call, "mob-kill", floor, droppedItems),
         enemy_name: enemyName,
-        chest_type: null,
       });
+    }
+
+    if (foundTreasureChest(ui)) {
+      // Found an unopened treasure chest. Store chest name for when it's opened
+      const chestName = extractChestName(ui);
+      Tracker.setContext("last_chest_name", chestName);
     }
 
     if (isChestOpened(ui)) {
       // Dropped item collection is shared across all tower actions
-      const droppedItems = getDroppedItems(ui);
-      const chestType = getOpenedChestType(ui);
+      const droppedItems = extractDroppedItems(ui);
+      const chestType =
+        Tracker.context?.last_chest_name ?? getOpenedChestType(ui);
 
       records.push({
         ...baseRecord(call, "chest", floor, droppedItems),
-        enemy_name: null,
         chest_type: chestType,
       });
     }

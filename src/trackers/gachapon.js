@@ -38,7 +38,7 @@
     return message.slice(pathStart, pathEnd);
   }
 
-  function getRefundedToken(call) {
+  function extractRefundedToken(call) {
     const message = call?.result?.message;
 
     const startMarker = "item_token";
@@ -64,7 +64,7 @@
     return message.slice(pathStart, pathEnd);
   }
 
-  function getDroppedItem(call) {
+  function extractDroppedItem(call) {
     const message = call?.result?.message;
 
     if (message === null) {
@@ -82,7 +82,7 @@
   }
 
   function buildRecord(call, tokenId, itemId) {
-    const extraTokenId = getRefundedToken(call);
+    const extraTokenId = extractRefundedToken(call);
 
     return {
       schema_version: SCHEMA_VERSION,
@@ -101,7 +101,7 @@
 
     const results = [];
     const tokenId = call.input?.tokenItemId ?? null;
-    const itemId = getDroppedItem(call);
+    const itemId = extractDroppedItem(call);
 
     if (tokenId !== null && itemId !== null) {
       results.push(buildRecord(call, tokenId, itemId));

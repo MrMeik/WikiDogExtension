@@ -6,7 +6,7 @@
 
   const SCHEMA_VERSION = 1;
 
-  function getCaughtName(call) {
+  function extractCaughtName(call) {
     return Helpers.extractFilename(call?.result?.image);
   }
 
@@ -15,7 +15,7 @@
   }
 
   function buildRecord(call, weather) {
-    const caughtName = getCaughtName(call);
+    const caughtName = extractCaughtName(call);
     const areaId = call.input?.fishingAreaId ?? null;
     const baitId = call.input?.baitItemId ?? null;
 
