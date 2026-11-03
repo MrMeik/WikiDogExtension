@@ -11,28 +11,49 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 1: Create the Chrome ZIP file
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Chrome: the repo manifest is used as-is (service_worker only)
       - name: Build Chrome Extension ZIP
         run: |
           zip -r extension-chrome.zip . -x "*.git*" "*.github*" "README.md"
 
-      # Step 2: Sign the Firefox Extension (Unlisted XPI)
-      - name: Build and Sign Firefox XPI
-        uses: mozilla/sign-addon@v4
-        with:
-          addon-id: 'dogonline-tracker@wikidog.mrmeik'
-          api-key: ${{ secrets.AMO_API_KEY }}
-          api-secret: ${{ secrets.AMO_API_SECRET }}
-          channel: unlisted
-          source: '.' 
-
-      # Step 3: Find and rename the signed XPI (since the Mozilla action auto-names it)
-      - name: Rename Signed XPI
+      # Firefox: copy the sources, then swap service_worker for scripts
+      - name: Prepare Firefox build directory
         run: |
-          mv xpi/*.xpi ./extension-firefox.xpi
+          mkdir -p build/firefox
+          rsync -a \
+            --exclude='.git*' \
+            --exclude='.github' \
+            --exclude='README.md' \
+            --exclude='build' \
+            --exclude='extension-chrome.zip' \
+            ./ build/firefox/
 
-      # Step 4: Upload both files to the GitHub Release
-      - name: Upload Artifacts to Release
+          jq '.background |= ({scripts: [.service_worker]} + del(.service_worker))' \
+            manifest.json > build/firefox/manifest.json
+
+          echo "Firefox background block:"
+          jq '.background' build/firefox/manifest.json
+
+      - name: Sign Firefox XPI
+        env:
+          WEB_EXT_API_KEY: ${{ secrets.AMO_API_KEY }}
+          WEB_EXT_API_SECRET: ${{ secrets.AMO_API_SECRET }}
+        run: |
+          npx --yes web-ext sign \
+            --source-dir=build/firefox \
+            --artifacts-dir=web-ext-artifacts \
+            --channel=unlisted
+
+      - name: Rename signed XPI
+        run: |
+          mv web-ext-artifacts/*.xpi ./extension-firefox.xpi
+
+      - name: Upload artifacts to release
         uses: softprops/action-gh-release@v2
         with:
           files: |

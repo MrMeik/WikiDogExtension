@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.1.1] - 2026-11-02
+
+Workaround for issues with Firefox build
+
 ## [0.1.1] - 2026-11-02
 
 ### Fixed
