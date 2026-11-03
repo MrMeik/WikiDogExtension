@@ -1,0 +1,42 @@
+name: Package and Release Extension
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 1: Create the Chrome ZIP file
+      - name: Build Chrome Extension ZIP
+        run: |
+          zip -r extension-chrome.zip . -x "*.git*" "*.github*" "README.md"
+
+      # Step 2: Sign the Firefox Extension (Unlisted XPI)
+      - name: Build and Sign Firefox XPI
+        uses: mozilla/sign-addon@v4
+        with:
+          addon-id: 'dogonline-tracker@wikidog.mrmeik'
+          api-key: ${{ secrets.AMO_API_KEY }}
+          api-secret: ${{ secrets.AMO_API_SECRET }}
+          channel: unlisted
+          source: '.' 
+
+      # Step 3: Find and rename the signed XPI (since the Mozilla action auto-names it)
+      - name: Rename Signed XPI
+        run: |
+          mv xpi/*.xpi ./extension-firefox.xpi
+
+      # Step 4: Upload both files to the GitHub Release
+      - name: Upload Artifacts to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            extension-chrome.zip
+            extension-firefox.xpi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
