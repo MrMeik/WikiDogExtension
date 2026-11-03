@@ -10,10 +10,13 @@
     "open_in_tab": true
   },
   "icons": {
-    "128": "wikidog_icon.png"
+    "32": "wikidog_icon-32.png",
+    "64": "wikidog_icon-64.png",
+    "128": "wikidog_icon-128.png"
   },
   "background": {
-    "service_worker": "src/background.js"
+    "service_worker": "src/background.js",
+    "scripts": ["src/background.js"]
   },
   "content_scripts": [
     {
@@ -42,7 +45,10 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "dogonline-tracker@wikidog.mrmeik",
-      "strict_min_version": "128.0"
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": ["websiteContent"]
+      }
     }
   }
 }
