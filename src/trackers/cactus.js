@@ -18,7 +18,7 @@
       kind: NAME,
       item: item,
       // Was the seed type string in the expected format. Useful in the event that game changes phrasing logs can still be used
-      expectedItemFormat: expectedItemFormat,
+      expected_item_format: expectedItemFormat,
     };
   }
 
