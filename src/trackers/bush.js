@@ -1,5 +1,4 @@
-// example tracker that tracks nothing
-// ALSO, make sure you include this file in the manifest.json next to the other trackers or it will not be used
+// tracks suspicious bush interactions
 (() => {
   "use strict";
   const Tracker = globalThis.DogTracker;
@@ -54,21 +53,13 @@
   }
 
   function interpretOpen(call) {
-    console.log("test1", call);
     if (!call.ok || !call.result || typeof call.result !== "object") return [];
 
-    call = {
-      result: {
-        message: "You Found a Mushroom in the bush",
-        image: "img/fake_mushroom.png",
-      },
-    };
     const message = getMessage(call);
     const image = getImageName(call);
 
     // Searching a bush multiple times looks like "There's nothing here..."
     if (isNothingHere(message)) {
-      console.log("Early exit");
       return [];
     }
 
@@ -89,8 +80,6 @@
         results.push(buildRecord(call, itemName));
       }
     }
-
-    console.log("jere", message, image);
 
     return results;
   }

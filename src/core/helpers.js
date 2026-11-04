@@ -14,7 +14,21 @@
     return filePath.substring(lastSlash + 1, lastDot);
   }
 
+  function getTextBetween(text, startWord, endWord) {
+    const startIndex = text.indexOf(startWord);
+    if (startIndex === -1) return null; // Start word not found
+
+    const endIndex = text.indexOf(endWord, startIndex + startWord.length);
+    if (endIndex === -1) return null; // End word not found
+
+    // Calculate the actual content boundaries (adjusting for spaces if needed)
+    const resultStart = startIndex + startWord.length;
+
+    return text.slice(resultStart, endIndex).trim();
+  }
+
   Tracker.helpers = {
     extractFilename,
+    getTextBetween,
   };
 })();
