@@ -6,7 +6,7 @@
   const NAME = "togbu";
   const SCHEMA_VERSION = 1;
 
-  function buildRecord(call, result, reward) {
+  function buildRecord(call, result, item) {
     return {
       schema_version: SCHEMA_VERSION,
       ext_version: Tracker.EXT_VERSION,
@@ -14,7 +14,7 @@
       happened_at_utc: call.ts,
       kind: NAME,
       result, // treat or ...
-      reward, // what item do you get when you get treat
+      item, // what item do you get when you get treat
     };
   }
 
