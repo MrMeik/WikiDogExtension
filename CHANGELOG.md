@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0] - 2026-11-03
+
+## Added
+
+- Tracking for TOGBU
+- Tracking for The Giant Cactus
+- Tracking for Suspicious and Concerning Bush
+
 ## [0.1.1.1] - 2026-11-02
 
 Workaround for issues with Firefox build
