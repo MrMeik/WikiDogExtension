@@ -52,7 +52,7 @@
     return Helpers.extractFilename(image);
   }
 
-  function interpretOpen(call) {
+  function interpretCall(call) {
     if (!call.ok || !call.result || typeof call.result !== "object") return [];
 
     const message = getMessage(call);
@@ -87,7 +87,7 @@
   Tracker.register({
     procedures: ["bush.rummage"],
     handle(call) {
-      const records = interpretOpen(call);
+      const records = interpretCall(call);
       for (const record of records) {
         Tracker.record(record);
       }

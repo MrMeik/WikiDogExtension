@@ -36,7 +36,7 @@
     return Helpers.getTextBetween(message, "some", "fall");
   }
 
-  function interpretOpen(call) {
+  function interpretCall(call) {
     // Ensure the call was not an error
     if (!call.ok || !call.result || typeof call.result !== "object") return [];
 
@@ -58,7 +58,7 @@
   Tracker.register({
     procedures: ["cactus.pick"],
     handle(call) {
-      const records = interpretOpen(call);
+      const records = interpretCall(call);
       for (const record of records) {
         Tracker.record(record);
       }

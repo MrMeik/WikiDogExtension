@@ -37,6 +37,7 @@
         "src/trackers/gachapon.js",
         "src/trackers/bush.js",
         "src/trackers/cactus.js",
+        "src/trackers/togbu.js",
         "src/core/bridge.js"
       ],
       "run_at": "document_idle",
