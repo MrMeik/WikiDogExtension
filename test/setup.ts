@@ -1,4 +1,6 @@
-// Setsup the getManifest for namespace startup
+// Sets up the getManifest for namespace startup
 (globalThis as any).chrome = {
   runtime: { getManifest: () => ({ version: "0.0.0-test" }) },
 };
+
+(globalThis as any).DogTracker = {}; // LEGACY Remove later
