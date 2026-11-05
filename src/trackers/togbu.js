@@ -13,7 +13,7 @@
       build_id: call.buildId,
       happened_at_utc: call.ts,
       kind: NAME,
-      result, // treat or ...
+      result, // treat or ..
       item, // what item do you get when you get treat
     };
   }
