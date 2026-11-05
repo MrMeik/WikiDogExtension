@@ -1,0 +1,32 @@
+{
+  "name": "WikiDogExtension",
+  "version": "0.2.0",
+  "description": "Unofficial extension that gathers information about various DogOnline interactions",
+  "main": "index.js",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "node scripts/build.mjs && node scripts/copy-static.mjs",
+    "watch": "pnpm build && node scripts/build.mjs --watch",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.16.1",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.16.1",
+  "type": "module",
+  "devDependencies": {
+    "@types/chrome": "^0.3.7",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0",
+    "web-ext": "^10.8.0"
+  }
+}
