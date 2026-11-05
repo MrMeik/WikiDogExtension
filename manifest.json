@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "WikiDog - DogOnline Action Logger",
   "version": "0.2.0",
-  "description": "Unofficial extension that gathers information about DogOnline interactions with fishing, gachapon, mob kills, opening chests and suspicious bush",
+  "description": "Unofficial extension that gathers information about DogOnline interactions with fishing, gachapon, mob kills, opening chests, the giant cactus, ToGBU and suspicious bush",
   "permissions": ["storage"],
   "host_permissions": ["https://wikidogbackend.onrender.com/*"],
   "options_ui": {

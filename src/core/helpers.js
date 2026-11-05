@@ -21,7 +21,7 @@
     const endIndex = text.indexOf(endWord, startIndex + startWord.length);
     if (endIndex === -1) return null; // End word not found
 
-    // Calculate the actual content boundaries (adjusting for spaces if needed)
+    // Calculate the actual content boundaries
     const resultStart = startIndex + startWord.length;
 
     return text.slice(resultStart, endIndex).trim();
