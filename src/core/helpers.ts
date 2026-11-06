@@ -26,8 +26,26 @@ export function getTextBetween(
   return source.slice(resultStart, endIndex).trim();
 }
 
-// LEGACY Remove later
-(globalThis as any).DogTracker.helpers = {
-  extractFilename,
-  getTextBetween,
-};
+// extracts procedure names from href like:
+// "dogonline.net/api/trpc/fish.catch,world.getWeather?batch=1" -> ["fish.catch", "world.getWeather"]
+export function extractProcedures(href: string): string[] {
+  try {
+    const pathname = new URL(href).pathname;
+    const trcpPrefix = "/api/trpc/";
+
+    if (!pathname.startsWith(trcpPrefix)) {
+      return [];
+    }
+
+    const segment = pathname.slice(trcpPrefix.length);
+    return segment ? decodeURIComponent(segment).split(",") : [];
+  } catch {
+    return [];
+  }
+}
+
+// Some jank I shall tolerate until I type everything
+export function asRecord(value: unknown): Record<string, unknown> | null {
+  if (!value || typeof value !== "object") return null;
+  return value as Record<string, unknown>;
+}
