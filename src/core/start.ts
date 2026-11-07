@@ -47,7 +47,6 @@ export function start(): void {
   started = true;
 
   for (const tracker of trackers) {
-    dogTracker.log(`registering tracker`, tracker);
     dogTracker.register(tracker);
   }
 

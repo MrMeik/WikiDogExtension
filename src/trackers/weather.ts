@@ -1,5 +1,9 @@
 import { asRecord } from "../core/helpers";
-import { TrackedCall, TrackerDefinition } from "../core/types";
+import {
+  AnyTrackerRecord,
+  TrackedCall,
+  TrackerDefinition,
+} from "../core/types";
 
 type WeatherReport = {
   type: string;
@@ -23,18 +27,21 @@ function isWeatherReport(
   );
 }
 
-export const tracker: TrackerDefinition = {
+export const tracker: TrackerDefinition<AnyTrackerRecord> = {
   procedures: ["world.getWeather"],
-  handle(call, api) {
-    if (!isWeatherReport(call)) return;
+  setup(api) {
+    return (call) => {
+      if (!isWeatherReport(call)) return [];
 
-    const snapshot: WeatherSnapshot = {
-      type: call.result.type,
-      timeOfDay: call.result.timeOfDay,
-      observedAt: call.ts,
+      const snapshot: WeatherSnapshot = {
+        type: call.result.type,
+        timeOfDay: call.result.timeOfDay,
+        observedAt: call.ts,
+      };
+
+      api.setContext("weather", snapshot);
+      api.log("weather", api.context.weather);
+      return [];
     };
-
-    api.setContext("weather", snapshot);
-    api.log("weather", api.context.weather);
   },
 };

@@ -1,5 +1,8 @@
 import { extensionApi } from "./extension-api";
 import {
+  AnyTrackerRecord,
+  BaseTrackerRecord,
+  DecoratedRecord,
   IncomingTrackedCall,
   TrackedCall,
   TrackerApi,
@@ -19,12 +22,13 @@ export type CreateAppOptions = {
 };
 
 export type DogTrackerApp = TrackerApi & {
-  records: Record<string, unknown>[];
+  records: DecoratedRecord[];
   out: TrackerLog;
-  register(tracker: TrackerDefinition): void;
+  register<T extends AnyTrackerRecord>(tracker: TrackerDefinition<T>): void;
   isWatched(procedure: string): boolean;
-  handlersFor(procedure: string): TrackerHandler[];
+  handlersFor(procedure: string): TrackerHandler<AnyTrackerRecord>[];
   watchedProcedures(): string[];
+  record(record: DecoratedRecord): void;
   deliver(record: Record<string, unknown>): void;
   dispatch(trackedCall: IncomingTrackedCall): void;
 };
@@ -45,12 +49,14 @@ function valdiateProcedures(procedures: unknown): string[] {
   return procedures;
 }
 
-function validateHandle(handle: unknown): TrackerHandler {
-  if (typeof handle !== "function") {
-    throw new Error("register needs handle(call)");
+function bindTracker(
+  tracker: TrackerDefinition<AnyTrackerRecord>,
+  api: TrackerApi,
+): TrackerHandler<AnyTrackerRecord> {
+  if (typeof tracker?.setup !== "function") {
+    throw new Error("register needs setup(api)");
   }
-
-  return handle as TrackerHandler;
+  return tracker.setup(api);
 }
 
 function errorText(err: unknown): unknown {
@@ -132,7 +138,7 @@ function toTimestamp(dateHeader: string | null | undefined): string {
 }
 
 export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
-  const handlers = new Map<string, TrackerHandler[]>();
+  const handlers = new Map<string, TrackerHandler<AnyTrackerRecord>[]>();
   const extVersion =
     options.extVersion ?? extensionApi().runtime.getManifest().version;
 
@@ -149,7 +155,7 @@ export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
 
     register(tracker) {
       const procedures = valdiateProcedures(tracker?.procedures);
-      const handle = validateHandle(tracker?.handle);
+      const handle = bindTracker(tracker, app);
       for (const procedure of procedures) {
         const existing = handlers.get(procedure);
         if (existing) {
@@ -169,11 +175,10 @@ export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
         throw new Error("record needs to be an object");
       }
 
-      const entry = { ...record, id: crypto.randomUUID() };
-      app.records.push(entry);
-      app.log("record", entry);
+      app.records.push(record);
+      app.log("record", record);
       try {
-        app.deliver(entry);
+        app.deliver(record);
       } catch (err) {
         app.warn("record", "couldn't queue the record: ", errorText(err));
       }
@@ -208,7 +213,16 @@ export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
         const call = callFor(trackedCall, procedure, index, results, timestamp);
         for (const handle of app.handlersFor(procedure)) {
           try {
-            handle(call, app);
+            for (var record of handle(call)) {
+              // Add decorating values and send it
+              app.record({
+                id: crypto.randomUUID(),
+                happened_at_utc: call.ts,
+                build_id: call.buildId,
+                ext_version: app.extVersion,
+                ...record,
+              });
+            }
           } catch (err) {
             app.warn(procedure, "handler failed:", errorText(err));
           }
