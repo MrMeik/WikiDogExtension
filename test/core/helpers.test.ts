@@ -1,5 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { extractFilename, getTextBetween } from "../../src/core/helpers";
+import {
+  extractFilename,
+  extractProcedures,
+  getTextBetween,
+} from "../../src/core/helpers";
 
 describe("extractFilename", () => {
   it("returns the file name without directory or extension", () => {
@@ -54,5 +58,21 @@ describe("getTextBetween", () => {
 
   it("returns the first matched start and end marker", () => {
     expect(getTextBetween("a1b a2b", "a", "b")).toBe("1");
+  });
+});
+
+describe("extractProcedures", () => {
+  it("reads a batched tRPC path", () => {
+    expect(
+      extractProcedures(
+        "https://dogonline.net/api/trpc/gachapon.open,fish.catch?batch=1",
+      ),
+    ).toEqual(["gachapon.open", "fish.catch"]);
+  });
+
+  it("ignores non tRPC calls", () => {
+    expect(
+      extractProcedures("https://dogonline.net/audio/gacha_disgusting.mp3"),
+    ).toEqual([]);
   });
 });

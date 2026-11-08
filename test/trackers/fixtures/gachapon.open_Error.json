@@ -1,0 +1,19 @@
+{
+  "ok": false,
+  "input": {
+    "tokenItemId": "token_food"
+  },
+  "result": null,
+  "error": {
+    "message": "Insufficient quantity of item: token_food",
+    "code": -32603,
+    "data": {
+      "code": "INTERNAL_SERVER_ERROR",
+      "httpStatus": 500,
+      "path": "gachapon.open",
+      "zodError": null,
+      "noActiveDog": false
+    }
+  },
+  "ts": "2026-11-08T02:54:14.000Z"
+}

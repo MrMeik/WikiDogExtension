@@ -1,7 +1,8 @@
+import { Context } from "./context";
 import { extensionApi } from "./extension-api";
+import { parseResponseString, parseTrackedCallInput } from "./helpers";
 import {
   AnyTrackerRecord,
-  BaseTrackerRecord,
   DecoratedRecord,
   IncomingTrackedCall,
   TrackedCall,
@@ -23,6 +24,7 @@ export type CreateAppOptions = {
 
 export type DogTrackerApp = TrackerApi & {
   records: DecoratedRecord[];
+  context: Context;
   out: TrackerLog;
   register<T extends AnyTrackerRecord>(tracker: TrackerDefinition<T>): void;
   isWatched(procedure: string): boolean;
@@ -67,66 +69,6 @@ function errorText(err: unknown): unknown {
   return err;
 }
 
-function parsedResults(responseText: string): unknown[] | null {
-  try {
-    const results: unknown = JSON.parse(responseText);
-    return Array.isArray(results) ? results : null;
-  } catch {
-    return null;
-  }
-}
-
-function rawInput(trackedCall: IncomingTrackedCall): string | null {
-  if (trackedCall.requestBodyText) {
-    return trackedCall.requestBodyText;
-  } else {
-    return new URL(trackedCall.url, trackedCall.base).searchParams.get("input");
-  }
-}
-
-// batched trcp calls may have multiple inputs which can be handled like this
-// {"0":{"json":{...}},"1":{"json":{...}}}.
-function inputFor(trackedCall: IncomingTrackedCall, index: number): unknown {
-  try {
-    const raw = rawInput(trackedCall);
-    if (!raw) {
-      return null;
-    }
-    const parsed = JSON.parse(raw) as Record<string, { json?: unknown }> | null;
-    return parsed?.[String(index)]?.json ?? null;
-  } catch {
-    return null;
-  }
-}
-
-function callFor(
-  trackedCall: IncomingTrackedCall,
-  procedure: string,
-  index: number,
-  results: unknown[],
-  timestamp: string,
-): TrackedCall {
-  const entry = results[index] as
-    | {
-        result?: { data?: { json?: unknown } };
-        error?: { json?: unknown };
-      }
-    | undefined;
-
-  return Object.freeze({
-    procedure,
-    index,
-    url: trackedCall.url,
-    input: inputFor(trackedCall, index),
-    ok: entry?.result !== undefined,
-    result: entry?.result?.data?.json,
-    error: entry?.error?.json ?? entry?.error ?? null,
-    ts: timestamp,
-    buildId: trackedCall.buildId ?? null,
-    pagePath: trackedCall.pagePath ?? null,
-  });
-}
-
 // Tries to pull value from ["date"] header on request. Fallback with current user time
 function toTimestamp(dateHeader: string | null | undefined): string {
   const ms = dateHeader ? Date.parse(dateHeader) : null;
@@ -149,7 +91,7 @@ export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
 
   const app: DogTrackerApp = {
     extVersion,
-    context: {},
+    context: {} as Context,
     records: [],
     out,
 
@@ -187,6 +129,9 @@ export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
     setContext(key, value) {
       app.context[key] = value;
     },
+    getContext(key) {
+      return key in app.context ? app.context[key] : null;
+    },
 
     deliver: options.deliver ?? (() => {}),
 
@@ -200,7 +145,7 @@ export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
         return;
       }
 
-      const results = parsedResults(trackedCall.responseText);
+      const results = parseResponseString(trackedCall.responseText);
       if (!results) return;
 
       const timestamp = toTimestamp(trackedCall.dateHeader);
@@ -210,7 +155,19 @@ export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
           return;
         }
 
-        const call = callFor(trackedCall, procedure, index, results, timestamp);
+        const input = parseTrackedCallInput(trackedCall, index);
+        const response = results[index];
+        const isError = "error" in response;
+
+        const call: TrackedCall = Object.freeze({
+          procedure,
+          input,
+          ok: !isError,
+          result: isError ? null : response.result.data.json,
+          error: isError ? response.error.json : null,
+          ts: timestamp,
+        });
+
         for (const handle of app.handlersFor(procedure)) {
           try {
             for (var record of handle(call)) {
@@ -218,7 +175,7 @@ export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
               app.record({
                 id: crypto.randomUUID(),
                 happened_at_utc: call.ts,
-                build_id: call.buildId,
+                build_id: trackedCall.buildId ?? null,
                 ext_version: app.extVersion,
                 ...record,
               });

@@ -1,6 +1,6 @@
 // tracks when a fishing attempt results in something being caught
-
-import { asRecord, extractFilename } from "../core/helpers";
+import * as v from "valibot";
+import { extractFilename } from "../core/helpers";
 import {
   BaseTrackerRecord,
   TrackedCall,
@@ -8,19 +8,29 @@ import {
   TrackerDefinition,
   TrackerHandler,
 } from "../core/types";
-import { WeatherSnapshot } from "./weather";
+import { WeatherSnapshot } from "../core/context";
 
 const SCHEMA_VERSION = 1;
 
-type CatchResult = {
-  success?: boolean;
-  image?: string;
-};
+const CatchResultSchema = v.object({
+  success: v.boolean(),
+  image: v.string(),
+});
 
-type CatchInput = {
-  fishingAreaId?: string;
-  baitItemId?: string;
-};
+const CatchInputSchema = v.object({
+  fishingAreaId: v.string(),
+  baitItemId: v.string(),
+});
+
+type CatchSuccessResult = v.InferOutput<typeof CatchResultSchema>;
+type CatchInput = v.InferOutput<typeof CatchInputSchema>;
+
+function isCatchResult(data: unknown): data is CatchSuccessResult {
+  return v.safeParse(CatchResultSchema, data).success;
+}
+function isCatchInput(data: unknown): data is CatchInput {
+  return v.safeParse(CatchInputSchema, data).success;
+}
 
 type CatchRecord = BaseTrackerRecord<"catch"> & {
   caught_name: string;
@@ -33,37 +43,23 @@ type CatchRecord = BaseTrackerRecord<"catch"> & {
 };
 
 function buildTracker(api: TrackerApi): TrackerHandler<CatchRecord> {
-  function extractCaughtName(result: CatchResult): string {
-    return extractFilename(result.image ?? "");
-  }
-
-  function wasSomethingCaught(result: CatchResult): boolean {
-    return result?.success ?? false;
-  }
-
-  function readWeather(value: unknown): WeatherSnapshot | undefined {
-    const weather = asRecord(value);
-    if (!weather) return undefined;
-    return weather as WeatherSnapshot;
-  }
-
   function buildRecord(
     call: TrackedCall,
-    result: CatchResult,
-    input: CatchInput | null,
-    weather: WeatherSnapshot | undefined,
+    result: CatchSuccessResult,
+    input: CatchInput,
+    weather: WeatherSnapshot | null,
   ): CatchRecord {
-    const caughtName = extractCaughtName(result);
-    const areaId = input?.fishingAreaId ?? null;
-    const baitId = input?.baitItemId ?? null;
+    const caughtName = extractFilename(result.image);
+    const areaId = input.fishingAreaId;
+    const baitId = input.baitItemId;
     const weatherMs = weather ? Date.parse(weather.observedAt as string) : NaN;
 
     return {
       schema_version: SCHEMA_VERSION,
       kind: "catch",
       caught_name: caughtName,
-      bait_id: baitId ?? "",
-      area_id: areaId ?? "",
+      bait_id: baitId,
+      area_id: areaId,
       time_of_day: weather?.timeOfDay ?? null,
       weather_type: weather?.type ?? null,
       weather_observed_at_utc: weather?.observedAt ?? null,
@@ -73,23 +69,17 @@ function buildTracker(api: TrackerApi): TrackerHandler<CatchRecord> {
     };
   }
 
-  function interpretCast(
-    call: TrackedCall,
-    weather: WeatherSnapshot | undefined,
-  ) {
-    const result = asRecord(call.result) as CatchResult | null;
-    if (!call.ok || !result) return [];
-
-    if (!wasSomethingCaught(result)) return [];
-
-    const input = asRecord(call.input) as CatchInput | null;
-    return [buildRecord(call, result, input, weather)];
-  }
-
   return (call) => {
-    const records = interpretCast(call, readWeather(api.context.weather));
-
-    return records;
+    if (
+      !call.ok ||
+      !isCatchInput(call.input) ||
+      !isCatchResult(call.result) ||
+      call.result.success === false
+    ) {
+      return [];
+    }
+    const weather = api.getContext("weather");
+    return [buildRecord(call, call.result, call.input, weather)];
   };
 }
 

@@ -1,4 +1,7 @@
 // Extracts out the filename from a filepath
+
+import { IncomingTrackedCall, TrackedCallResponse } from "./types";
+
 // "img/tower/enemy_freezypup.png" -> "enemy_freezypup"
 export function extractFilename(filePath: string): string {
   const lastSlash = filePath.lastIndexOf("/");
@@ -46,6 +49,66 @@ export function extractProcedures(href: string): string[] {
 
 // Some jank I shall tolerate until I type everything
 export function asRecord(value: unknown): Record<string, unknown> | null {
-  if (!value || typeof value !== "object") return null;
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
   return value as Record<string, unknown>;
+}
+
+function isTrackedCallReponse(item: unknown): item is TrackedCallResponse {
+  const itemRecord = asRecord(item);
+  if (!itemRecord) {
+    return false;
+  }
+
+  // Validate success tracked call response shape
+  const resultObj = asRecord(itemRecord.result);
+  const dataObj = resultObj ? asRecord(resultObj.data) : null;
+  const hasValidResult = dataObj ? "json" in dataObj : false;
+
+  // Validate error tracked call response shape
+  const errorObj = asRecord(itemRecord.error);
+  const hasValidError = errorObj ? "json" in errorObj : false;
+
+  return hasValidError || hasValidResult;
+}
+
+export function parseResponseString(
+  responseText: string,
+): TrackedCallResponse[] | null {
+  try {
+    const results = JSON.parse(responseText);
+
+    if (!Array.isArray(results)) {
+      return null;
+    }
+
+    return results.every(isTrackedCallReponse) ? results : null;
+  } catch {
+    return null;
+  }
+}
+
+function rawInput(trackedCall: IncomingTrackedCall): string | null {
+  if (trackedCall.requestBodyText) {
+    return trackedCall.requestBodyText;
+  } else {
+    return new URL(trackedCall.url, trackedCall.base).searchParams.get("input");
+  }
+}
+
+// batched trcp calls may have multiple inputs which can be handled like this
+// {"0":{"json":{...}},"1":{"json":{...}}}.
+export function parseTrackedCallInput(
+  trackedCall: IncomingTrackedCall,
+  index: number,
+): unknown {
+  try {
+    const raw = rawInput(trackedCall);
+    if (!raw) {
+      return null;
+    }
+    const parsed = JSON.parse(raw) as Record<string, { json?: unknown }> | null;
+    return parsed?.[String(index)]?.json ?? null;
+  } catch {
+    return null;
+  }
 }

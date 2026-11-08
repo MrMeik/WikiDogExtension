@@ -1,22 +1,32 @@
+import { Context } from "./context";
+
 // Generic tracked call missing typing information which is specific to each procedure
 export type TrackedCall = {
   procedure: string;
-  index: number;
-  url: string;
-  input: unknown; // TODO
+  input: unknown | null; // TODO
   ok: boolean;
-  result: unknown; // TODO
-  error: unknown; // TODO
+  result: unknown | null;
+  error: unknown | null;
   ts: string;
-  buildId: string | null;
-  pagePath: string | null;
+};
+
+export type TrackedCallResponse =
+  | TrackedCallResponseSuccess
+  | TrackedCallResponseError;
+
+export type TrackedCallResponseSuccess = {
+  result: { data: { json: unknown } };
+};
+
+export type TrackedCallResponseError = {
+  error: { json: unknown };
 };
 
 // Exposed API for trackers to use when responding to a call
 export type TrackerApi = {
   extVersion: string;
-  context: Record<string, unknown>; // TODO: Replace with accessor methods maybe
-  setContext(key: string, value: unknown): void;
+  getContext<K extends keyof Context>(key: K): Context[K] | null;
+  setContext<K extends keyof Context>(key: K, value: Context[K]): void;
   log(...args: unknown[]): void;
   warn(...args: unknown[]): void;
 };

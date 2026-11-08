@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "input": {
+    "tokenItemId": "token_food"
+  },
+  "result": {
+    "message": "Gachapon makes a disgusting gurgling sound. Out pops a Mushroom!<br/><br/><img src=\"img/item_mushroom.png\"/><br/><br/>Oh, hey! Your token popped right back out of the machine. That's lucky!<br/><br/><img src=\"img/item_token_food.png\"/>"
+  },
+  "error": null,
+  "ts": "2026-11-08T02:54:14.000Z"
+}

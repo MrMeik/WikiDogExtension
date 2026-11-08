@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "input": {
+    "fishingAreaId": "lake",
+    "baitItemId": "pouch_of_prawns"
+  },
+  "result": {
+    "success": true,
+    "message": "MrDog caught a Guppy!",
+    "image": "img/item_guppy.png"
+  },
+  "error": null,
+  "ts": "2026-11-08T02:54:14.000Z"
+}

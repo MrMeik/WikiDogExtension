@@ -1,0 +1,11 @@
+{
+  "input": null,
+  "ok": true,
+  "result": {
+    "type": "clear skies",
+    "image": null,
+    "timeOfDay": "night"
+  },
+  "error": null,
+  "ts": "2026-11-08T02:53:41.000Z"
+}

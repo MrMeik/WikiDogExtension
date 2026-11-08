@@ -1,37 +1,23 @@
-import { asRecord } from "../core/helpers";
-import {
-  AnyTrackerRecord,
-  TrackedCall,
-  TrackerDefinition,
-} from "../core/types";
+import { WeatherSnapshot } from "../core/context";
+import { AnyTrackerRecord, TrackerDefinition } from "../core/types";
+import * as v from "valibot";
 
-type WeatherReport = {
-  type: string;
-  timeOfDay: string;
-};
+const WeatherReportSchema = v.object({
+  type: v.string(),
+  timeOfDay: v.string(),
+});
 
-export type WeatherSnapshot = {
-  type?: string;
-  timeOfDay?: string;
-  observedAt?: string;
-};
+type WeatherReport = v.InferOutput<typeof WeatherReportSchema>;
 
-function isWeatherReport(
-  call: TrackedCall,
-): call is TrackedCall & { result: WeatherReport } {
-  const data = asRecord(call.result);
-  return (
-    call.ok &&
-    typeof data?.type === "string" &&
-    typeof data?.timeOfDay === "string"
-  );
+function isWeatherReport(data: unknown): data is WeatherReport {
+  return v.safeParse(WeatherReportSchema, data).success;
 }
 
 export const tracker: TrackerDefinition<AnyTrackerRecord> = {
   procedures: ["world.getWeather"],
   setup(api) {
     return (call) => {
-      if (!isWeatherReport(call)) return [];
+      if (!isWeatherReport(call.result)) return [];
 
       const snapshot: WeatherSnapshot = {
         type: call.result.type,
@@ -40,8 +26,8 @@ export const tracker: TrackerDefinition<AnyTrackerRecord> = {
       };
 
       api.setContext("weather", snapshot);
-      api.log("weather", api.context.weather);
-      return [];
+      api.log("weather", api.getContext("weather"));
+      return []; // Weather is never sent off as a record, just saved to context
     };
   },
 };
