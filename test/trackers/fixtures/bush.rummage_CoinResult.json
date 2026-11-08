@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "input": {},
+  "input": null,
   "result": {
     "message": "You found 50 coins in the bush!"
   },

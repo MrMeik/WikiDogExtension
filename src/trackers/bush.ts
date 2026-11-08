@@ -25,7 +25,6 @@ type BushRecord = BaseTrackerRecord<"bush"> & {
 };
 
 const NOTHING_HERE_MESSAGE = "There's nothing here...";
-
 function isNothingHere(result: BushResult) {
   return NOTHING_HERE_MESSAGE?.localeCompare(result.message, "en") === 0;
 }

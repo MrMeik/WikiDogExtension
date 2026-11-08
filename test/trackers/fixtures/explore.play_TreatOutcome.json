@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "input": null,
+  "result": {
+    "onCooldown": false,
+    "outcome": "treat",
+    "item": {
+      "id": "fuse",
+      "name": "Kaboom Fuse",
+      "image": "img/clothes_fuse.png"
+    }
+  },
+  "error": null,
+  "ts": "2026-11-08T02:54:14.000Z"
+}

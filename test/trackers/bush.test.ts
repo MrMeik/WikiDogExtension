@@ -5,6 +5,7 @@ import { TrackerApi } from "../../src/core/types";
 
 const getItem = () => loadTrackedCall("bush.rummage_ItemResult");
 const getCoin = () => loadTrackedCall("bush.rummage_CoinResult");
+const getAlreadySearched = () => loadTrackedCall("bush.rummage_NothingHere");
 const getMissingCoin = () => loadTrackedCall("bush.rummage_MissingCoinResult");
 
 describe("bushTracker", () => {
@@ -38,6 +39,14 @@ describe("bushTracker", () => {
       kind: "bush",
       item: "50 coins",
     });
+  });
+
+  it("returns nothing when already searched", () => {
+    const tracked = tracker.setup(mockApi);
+    const call = getAlreadySearched();
+    const results = tracked(call);
+
+    expect(results).toHaveLength(0);
   });
 
   it("throws an error when coin amount is missing", () => {
