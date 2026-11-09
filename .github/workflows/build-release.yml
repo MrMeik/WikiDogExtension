@@ -11,30 +11,34 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set up pnpm
+        uses: pnpm/setup-node@v4
+        with:
+          version: 12.16.1
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: pnpm
 
-      # Chrome: the repo manifest is used as-is (service_worker only)
+      - name: Install and Build
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm build
+
       - name: Build Chrome Extension ZIP
         run: |
-          zip -r extension-chrome.zip . -x "*.git*" "*.github*" "README.md"
+          cd dist
+          zip -r ../extension-chrome.zip .
 
-      # Firefox: copy the sources, then swap service_worker for scripts
       - name: Prepare Firefox build directory
         run: |
           mkdir -p build/firefox
-          rsync -a \
-            --exclude='.git*' \
-            --exclude='.github' \
-            --exclude='README.md' \
-            --exclude='build' \
-            --exclude='extension-chrome.zip' \
-            ./ build/firefox/
+          rsync -a dist/ build/firefox/
 
           jq '.background |= ({scripts: [.service_worker]} + del(.service_worker))' \
-            manifest.json > build/firefox/manifest.json
+            dist/manifest.json > build/firefox/manifest.json
 
           echo "Firefox background block:"
           jq '.background' build/firefox/manifest.json
