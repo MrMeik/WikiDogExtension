@@ -1,0 +1,245 @@
+{
+  "procedure": "tower.takeTurn",
+  "input": {
+    "turn": "next-combat-step"
+  },
+  "ok": true,
+  "result": {
+    "state": "active",
+    "ui": {
+      "levelName": {
+        "text": "Floor 2",
+        "visible": true
+      },
+      "map": {
+        "images": [
+          [
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png"
+          ],
+          [
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_unknown.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png"
+          ],
+          [
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_unknown.png",
+            "/img/tower/tower_map_player.gif",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png"
+          ],
+          [
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_empty.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png"
+          ],
+          [
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_unknown.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png"
+          ],
+          [
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png"
+          ],
+          [
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png"
+          ],
+          [
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png",
+            "/img/tower/tower_map_nothing.png"
+          ]
+        ],
+        "overlays": [
+          ["", "", "", "", "", "", "", "", ""],
+          ["", "", "", "", "", "", "", "", ""],
+          ["", "", "", "", "", "", "", "", ""],
+          ["", "", "", "", "", "", "", "", ""],
+          ["", "", "", "", "", "", "", "", ""],
+          ["", "", "", "", "", "", "", "", ""],
+          ["", "", "", "", "", "", "", "", ""],
+          ["", "", "", "", "", "", "", "", ""]
+        ],
+        "visible": true
+      },
+      "mobPortrait": {
+        "image": "",
+        "hp": 0,
+        "maxHp": 0,
+        "statusEffects": [],
+        "visible": false
+      },
+      "directionControls": {
+        "validDirs": {
+          "up": true,
+          "down": true,
+          "left": true,
+          "right": false
+        },
+        "visible": true
+      },
+      "eventPortrait": {
+        "image": "",
+        "visible": false
+      },
+      "mobDamageNumber": {
+        "hp": 0,
+        "visible": false
+      },
+      "playerDamageNumber": {
+        "hp": 0,
+        "visible": false
+      },
+      "playerPortrait": {
+        "uuid": "983a72e9-11db-45f9-a85a-9e9046fe0b67",
+        "name": "MrDog",
+        "hp": 10,
+        "maxHp": 10,
+        "statusEffects": [],
+        "visible": true
+      },
+      "combatItems": {
+        "cell1": {
+          "image": "/img/items/weapons/Weapon_Upgrade_Magic_3.png",
+          "cooldownTurnsLeft": 0,
+          "visible": true
+        },
+        "cell2": {
+          "image": "/img/item_rockos_ship.png",
+          "cooldownTurnsLeft": 0,
+          "visible": true
+        },
+        "cell3": {
+          "image": "/img/items/weapons/Weapon_Dream_Melee.png",
+          "cooldownTurnsLeft": 0,
+          "visible": true
+        },
+        "cell4": {
+          "image": "/img/items/weapons/Event_Halloween_Sword.png",
+          "cooldownTurnsLeft": 0,
+          "visible": true
+        },
+        "disabled": true,
+        "visible": false
+      },
+      "soundEffects": {
+        "files": [],
+        "visible": false
+      },
+      "lootDisplay": {
+        "items": [],
+        "coins": null,
+        "visible": false
+      },
+      "textbox": {
+        "text": "",
+        "showNextBtn": false,
+        "visible": false
+      },
+      "textStatic": {
+        "text": "",
+        "visible": false
+      },
+      "treasureButtons": {
+        "showOpenChest": false,
+        "showDismiss": false,
+        "visible": false
+      },
+      "doorButtons": {
+        "showOpenDoor": false,
+        "showDismiss": false,
+        "visible": false
+      },
+      "teleportDoorButtons": {
+        "showEnter": false,
+        "showDismiss": false,
+        "visible": false
+      },
+      "trapButtons": {
+        "showContinue": false,
+        "visible": false
+      },
+      "cutscene": {
+        "cutsceneType": "",
+        "src": "",
+        "width": null,
+        "height": null,
+        "showSkip": false,
+        "visible": false
+      },
+      "springsButtons": {
+        "showHeal": false,
+        "showLeave": false,
+        "visible": false
+      },
+      "buttonsSection1": {
+        "visible": false
+      },
+      "buttonsSection2": {
+        "showEscape": false,
+        "runOver": false,
+        "visible": true
+      },
+      "debugButtons": {
+        "visible": false
+      },
+      "mapReveal": {
+        "visible": false
+      }
+    }
+  },
+  "error": null,
+  "ts": "2026-11-08T22:42:13.000Z"
+}

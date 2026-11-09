@@ -27,6 +27,7 @@ export type TrackerApi = {
   extVersion: string;
   getContext<K extends keyof Context>(key: K): Context[K] | null;
   setContext<K extends keyof Context>(key: K, value: Context[K]): void;
+  debug(...args: unknown[]): void;
   log(...args: unknown[]): void;
   warn(...args: unknown[]): void;
 };

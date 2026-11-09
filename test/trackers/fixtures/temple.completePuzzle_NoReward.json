@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "input": {
+    "game": "wall",
+    "difficulty": 2
+  },
+  "result": {
+    "message": "A shadow passes over the door to the temple.",
+    "rewardGiven": false
+  },
+  "error": null,
+  "ts": "2026-11-08T02:54:14.000Z"
+}

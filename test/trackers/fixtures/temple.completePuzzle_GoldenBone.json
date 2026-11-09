@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "input": {
+    "game": "goldenbone",
+    "difficulty": 1
+  },
+  "result": {
+    "message": "MrDog hears the woofing of a hundred ancient dogs from long ago.",
+    "rewardGiven": true,
+    "rewardItem": {
+      "id": "sapphire_idol",
+      "name": "Sapphire-Encrusted Idol",
+      "image": "img/items/trinkets/Trinket_Temple_Sapstat.png"
+    }
+  },
+  "error": null,
+  "ts": "2026-11-08T02:54:14.000Z"
+}

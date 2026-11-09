@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "input": null,
+  "result": {
+    "message": "You give the Crimson Crawler to Chicken Dog. You receive a Red Secretegg!",
+    "image": "img/item_secretegg_red.png",
+    "newChickenLevel": 109
+  },
+  "error": null,
+  "ts": "2026-11-08T02:54:14.000Z"
+}

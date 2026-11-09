@@ -26,6 +26,7 @@ export type DogTrackerApp = TrackerApi & {
   records: DecoratedRecord[];
   context: Context;
   out: TrackerLog;
+  debugLogging: boolean;
   register<T extends AnyTrackerRecord>(tracker: TrackerDefinition<T>): void;
   isWatched(procedure: string): boolean;
   handlersFor(procedure: string): TrackerHandler<AnyTrackerRecord>[];
@@ -87,6 +88,7 @@ export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
   const out = options.out ?? {
     log: (...args: unknown[]) => console.log(...args),
     warn: (...args: unknown[]) => console.warn(...args),
+    debug: (...args: unknown[]) => console.log(...args),
   };
 
   const app: DogTrackerApp = {
@@ -94,6 +96,7 @@ export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
     context: {} as Context,
     records: [],
     out,
+    debugLogging: false,
 
     register(tracker) {
       const procedures = valdiateProcedures(tracker?.procedures);
@@ -135,6 +138,11 @@ export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
 
     deliver: options.deliver ?? (() => {}),
 
+    debug(...args) {
+      if (this.debugLogging) {
+        app.out.log(`[WikiDog - Debug]`, ...args);
+      }
+    },
     log: (...args) => app.out.log(`[WikiDog]`, ...args),
     warn: (...args) => app.out.warn(`[WikiDog]`, ...args),
 
@@ -170,6 +178,7 @@ export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
 
         for (const handle of app.handlersFor(procedure)) {
           try {
+            app.debug("Call Fixture: ", call);
             for (var record of handle(call)) {
               // Add decorating values and send it
               app.record({
@@ -192,3 +201,4 @@ export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
 }
 
 export const dogTracker = createApp();
+(globalThis as any).dogTracker = dogTracker;

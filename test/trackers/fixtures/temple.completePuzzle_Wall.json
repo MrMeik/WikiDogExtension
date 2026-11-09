@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "input": {
+    "game": "wall",
+    "difficulty": 2
+  },
+  "result": {
+    "message": "MrDog looks up at the dog temple and says a dog prayer.",
+    "rewardGiven": true,
+    "rewardItem": {
+      "id": "mini_temple",
+      "name": "Miniature Temple of Dog",
+      "image": "img/item_mini_temple.png"
+    }
+  },
+  "error": null,
+  "ts": "2026-11-08T02:54:14.000Z"
+}
