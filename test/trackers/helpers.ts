@@ -21,6 +21,7 @@ export function mockTrackerApi(
     extVersion: "0.0.0",
     log: vi.fn(),
     warn: vi.fn(),
+    debug: vi.fn(),
     ...overrides,
   };
 }
