@@ -3,7 +3,7 @@ import { Context } from "./context";
 // Generic tracked call missing typing information which is specific to each procedure
 export type TrackedCall = {
   procedure: string;
-  input: unknown | null; // TODO
+  input: unknown | null;
   ok: boolean;
   result: unknown | null;
   error: unknown | null;
@@ -55,12 +55,19 @@ export type IncomingTrackedCall = {
   pagePath?: string | null;
 };
 
-export type TokenState = "ok" | "missing" | "rejected" | "saved";
+export const VALID_TOKEN_STATES = [
+  "ok",
+  "missing",
+  "rejected",
+  "saved",
+] as const;
+
+export type TokenState = (typeof VALID_TOKEN_STATES)[number];
 
 export type ExtensionCache = {
-  outbox?: unknown[];
-  apiToken?: string;
-  tokenState?: TokenState;
+  outbox: unknown[];
+  apiToken: string;
+  tokenState: TokenState;
 };
 
 export type ExtensionCacheChanges = {

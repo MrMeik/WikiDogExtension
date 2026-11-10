@@ -68,7 +68,7 @@ const options = {
   entryPoints: {
     "src/page/hook": "./src/page/hook",
     "src/content": "./src/core/start.ts",
-    "src/background": "./src/background",
+    "src/uploading/background": "./src/uploading/background",
     "src/options/options": "./src/options/options",
   },
   outdir: "dist",

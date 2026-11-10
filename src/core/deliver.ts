@@ -1,3 +1,4 @@
+import { RecordMessage } from "../uploading/worker";
 import { DogTrackerApp } from "./create-app";
 import { extensionApi } from "./extension-api";
 import { ExtensionCache, ExtensionCacheChanges } from "./types";
@@ -5,7 +6,7 @@ import { ExtensionCache, ExtensionCacheChanges } from "./types";
 export function installDeliver(app: DogTrackerApp): void {
   const browserApi = extensionApi();
 
-  function send(message: { type: string; record: Record<string, unknown> }) {
+  function send(message: RecordMessage) {
     try {
       const result = browserApi.runtime.sendMessage(message);
       if (result && typeof result.then === "function") {
