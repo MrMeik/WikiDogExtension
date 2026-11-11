@@ -1,0 +1,17 @@
+{
+  "ok": false,
+  "input": null,
+  "result": null,
+  "error": {
+    "message": "Insufficient quantity of item: whole_can_of_worms",
+    "code": -32603,
+    "data": {
+      "code": "INTERNAL_SERVER_ERROR",
+      "httpStatus": 500,
+      "path": "nest.turnIn",
+      "zodError": null,
+      "noActiveDog": false
+    }
+  },
+  "ts": "2026-11-08T02:54:14.000Z"
+}

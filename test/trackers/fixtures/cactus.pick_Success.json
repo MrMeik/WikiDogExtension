@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "input": null,
+  "result": {
+    "message": "You carefully approach the giant cactus, and some Flowery Cactus Seeds fall at your feet!",
+    "image": "img/item_cactus_seeds.png"
+  },
+  "error": null,
+  "ts": "2026-11-08T02:54:14.000Z"
+}

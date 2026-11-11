@@ -1,0 +1,15 @@
+{
+  "procedure": "farm.doAction",
+  "input": {
+    "hash": "36ebc11a18a79b4c762af5e83e836d7f7eff68610e3e8114d91fa19a967b45a8"
+  },
+  "ok": true,
+  "result": {
+    "message": {
+      "text": "You harvested the Pomnapple Plant and received a White Pomnapple!",
+      "image": "/img/item_white_pomnapple.png"
+    }
+  },
+  "error": null,
+  "ts": "2026-11-11T01:07:30.000Z"
+}

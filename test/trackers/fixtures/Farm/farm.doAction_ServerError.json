@@ -1,0 +1,20 @@
+{
+  "procedure": "farm.doAction",
+  "input": {
+    "hash": "92163ca6369bbf6410572e65350594a74757b01f8548c26ee91d56c20c470502"
+  },
+  "ok": false,
+  "result": null,
+  "error": {
+    "message": "Invalid action!",
+    "code": -32603,
+    "data": {
+      "code": "INTERNAL_SERVER_ERROR",
+      "httpStatus": 500,
+      "path": "farm.doAction",
+      "zodError": null,
+      "noActiveDog": false
+    }
+  },
+  "ts": "2026-11-11T01:26:26.000Z"
+}

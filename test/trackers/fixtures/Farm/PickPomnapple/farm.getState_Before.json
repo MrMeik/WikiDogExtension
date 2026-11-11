@@ -1,0 +1,967 @@
+{
+  "procedure": "farm.getState",
+  "input": null,
+  "ok": true,
+  "result": {
+    "ui": {
+      "actions": [
+        {
+          "type": "dig-up",
+          "title": "Dig up Apple Tree",
+          "image": "/img/farm_shovel.png",
+          "tile": "-1,-1",
+          "hash": "5c82304b8fb34aa30de9c92955273008e0be844713c03f9f45b9f5a3844bac74"
+        },
+        {
+          "type": "harvest",
+          "title": "Harvest Apple Tree",
+          "image": "/img/item_miniature_doghouse.png",
+          "tile": "-1,-1",
+          "hash": "28876f5698674e2dde0d70be601bb8a4ebb937bacd89585aa8896c9d6374a14a"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up Pomnapple Plant",
+          "image": "/img/farm_shovel.png",
+          "tile": "-1,0",
+          "hash": "d24a599c8dc72e0517945483637a9409d7d3242c0b0bc159b2b16012a3340e44"
+        },
+        {
+          "type": "harvest",
+          "title": "Harvest Pomnapple Plant",
+          "image": "/img/item_miniature_doghouse.png",
+          "tile": "-1,0",
+          "hash": "92163ca6369bbf6410572e65350594a74757b01f8548c26ee91d56c20c470502"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up Pomnapple Plant",
+          "image": "/img/farm_shovel.png",
+          "tile": "-1,1",
+          "hash": "13a112e7756a4041755fd9fa536dc164303e7ce14c4b1999287859981b361d88"
+        },
+        {
+          "type": "harvest",
+          "title": "Harvest Pomnapple Plant",
+          "image": "/img/item_miniature_doghouse.png",
+          "tile": "-1,1",
+          "hash": "99b08c05dbcca53f05ca442c98e4609c7cd2e95ab8bdfe849e266b460e58321a"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up Watermelon",
+          "image": "/img/farm_shovel.png",
+          "tile": "0,-1",
+          "hash": "e6dda4331c37e4527e78f978bb29877651a4703b1ed8900e3df124d32b70bbf4"
+        },
+        {
+          "type": "harvest",
+          "title": "Harvest Watermelon",
+          "image": "/img/item_miniature_doghouse.png",
+          "tile": "0,-1",
+          "hash": "2887419c75ac6a27caf59cc285dc238ea725ef4fc5e6387a66f82461c9598707"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "0,0",
+          "hash": "bf4174da8d2700a04d9cf2ffc0d594226d215680bb822b7590182cd0f1eac6d4"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "0,1",
+          "hash": "5ebbd48f4689c93a1aea3ba22140a1ee85514edd118544a39445ca88dcf415cb"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "1,-1",
+          "hash": "f759fcc69c731bd4be0eba8c3fc19f3bf6b7b7b366804e657ed08d731391c9f7"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "1,0",
+          "hash": "47e288f3f5cbe269149d32e7ef5172c500d483fa5980a989f9a627177813c908"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "1,1",
+          "hash": "5f0ceacaa615b3f399b731fa4bdb93a9fef405b779ff5810ca6e87028e7ccd71"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "2,-1",
+          "hash": "3500082a1c6133df3ea1fe5281c1b1e7a07f36f85fb96b0eab1dd00d52d9e89e"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "2,0",
+          "hash": "68b203277a72b95c6684663caabc6efa689f499c475bb15bceb3ebd30688bcd7"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "2,1",
+          "hash": "f907210bd4f3d94caa2756ba8e74e4483a1c2087cbe71e2a717ba6c2ff7b73fe"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up Pomnapple Plant",
+          "image": "/img/farm_shovel.png",
+          "tile": "-1,2",
+          "hash": "ab67e9e2320d84dc3ded54e683b51a940bd636c7536b52bcc2b633f43eeb3637"
+        },
+        {
+          "type": "harvest",
+          "title": "Harvest Pomnapple Plant",
+          "image": "/img/item_miniature_doghouse.png",
+          "tile": "-1,2",
+          "hash": "36ebc11a18a79b4c762af5e83e836d7f7eff68610e3e8114d91fa19a967b45a8"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up Oak Tree",
+          "image": "/img/farm_shovel.png",
+          "tile": "0,2",
+          "hash": "8e75714ae66648607d4d4acb61da7ca23f7795a0ab37119a4965d936fd761519"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "1,2",
+          "hash": "74c512aebeb749cfbd2a4d5436f2e25b1ed7bfdd89ee4df5d0b15a73a89a99d9"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "2,2",
+          "hash": "dcf2f2889daf81709d2b5a258a0395605cbfdca1b6a3b8a56cbeeb2356b0a2f4"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "3,-1",
+          "hash": "f1d08fa1e8e24674c0eaedcb6c016d83100b6085ea3659bd2ace040d16aa0390"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "3,0",
+          "hash": "9280e77c176c98bd54eebdec63bdfe2fad0e809b0b91e891ec15517f9ad519b2"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "3,1",
+          "hash": "847c65d2b4d6be81938bed667babc9cbb1a438ecafcd076aff401de3f1ce9b8f"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "3,2",
+          "hash": "8b7588dd76939a8b046eecb451825adcb6ff6aa6db8497481e77148e5b7261cf"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up Starry Cactus",
+          "image": "/img/farm_shovel.png",
+          "tile": "-1,3",
+          "hash": "0ede250adfc4dfd3dd925d77c608f47a4d4302b4090de3138ceacdde2502a3d7"
+        },
+        {
+          "type": "harvest",
+          "title": "Harvest Starry Cactus",
+          "image": "/img/item_miniature_doghouse.png",
+          "tile": "-1,3",
+          "hash": "bdcb5d21e28973e56508b6f5182624173484cae7182f3b472ce6e9040438555b"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "0,3",
+          "hash": "072ef7e6d86a23e1b622ba11707d245a95b93e14be48f8ad28989c916da4f305"
+        },
+        {
+          "type": "plant",
+          "title": "Plant Apple Tree",
+          "image": "/img/item_appletreeseeds.png",
+          "cropID": "apple_tree",
+          "count": 40,
+          "tile": "1,3",
+          "hash": "9bbe508dca2bf96938e4b690c3b30debe55db8b062595aa12410e0274f71583b"
+        },
+        {
+          "type": "plant",
+          "title": "Plant Oak Tree",
+          "image": "/img/item_acorn.png",
+          "cropID": "oak_tree",
+          "count": 36,
+          "tile": "1,3",
+          "hash": "29b33d7b81a6bfbe496b8f552ec6e9b778e57ed30bb1e247046ffe7202f0821a"
+        },
+        {
+          "type": "plant",
+          "title": "Plant Barkkoli",
+          "image": "/img/item_seed_barkkoli.png",
+          "cropID": "barkkoli",
+          "count": 7,
+          "tile": "1,3",
+          "hash": "521294c5f9b3a7dd95e9f59ac6ec03cec0f2e7360ab88c1d5979b17cbfc76eda"
+        },
+        {
+          "type": "plant",
+          "title": "Plant Doggplant Vine",
+          "image": "/img/item_doggplantseed.png",
+          "cropID": "doggplant",
+          "count": 2,
+          "tile": "1,3",
+          "hash": "e196ecf91072724b090be6553e3f739eec4d369f9aabe8dc84c726f8afbe9920"
+        },
+        {
+          "type": "plant",
+          "title": "Plant Pawberry Bush",
+          "image": "/img/item_pawberryseeds.png",
+          "cropID": "pawberry",
+          "count": 20,
+          "tile": "1,3",
+          "hash": "385653b7e108a9faeece9e797b15d1182d3e59d876b91730916b8b0b0fcb6da6"
+        },
+        {
+          "type": "plant",
+          "title": "Plant Pomnapple Plant",
+          "image": "/img/item_seed_pomnapple.png",
+          "cropID": "pomnapple",
+          "count": 49,
+          "tile": "1,3",
+          "hash": "9b48584fe16a438da490674a94de8bc87c51af906e3f4e99a56ff8f2a05c2807"
+        },
+        {
+          "type": "plant",
+          "title": "Plant Bone Vine",
+          "image": "/img/item_boneanna_seed.png",
+          "cropID": "boneanna",
+          "count": 5,
+          "tile": "1,3",
+          "hash": "20cb47d0f3a5ce65a3b0c0ee07ff7532b8e3f1e85cd78fecd0d46965a12295b0"
+        },
+        {
+          "type": "plant",
+          "title": "Plant Watermelon",
+          "image": "/img/item_watermelon_seed.png",
+          "cropID": "watermelon",
+          "count": 90,
+          "tile": "1,3",
+          "hash": "be877ba9cdee36be8b4f504c946b93ff20d044509c9d99a211d0876bfd47298b"
+        },
+        {
+          "type": "plant",
+          "title": "Plant Flowery Cactus",
+          "image": "/img/item_cactus_seed.png",
+          "cropID": "flowery_cactus",
+          "count": 10,
+          "tile": "1,3",
+          "hash": "1d88f0648d2c5de9bb2a027603736c7470ac94754b412d07892fe58576e87df0"
+        },
+        {
+          "type": "plant",
+          "title": "Plant Cowboy Cactus",
+          "image": "/img/item_cactus_seed.png",
+          "cropID": "cowboy_cactus",
+          "count": 4,
+          "tile": "1,3",
+          "hash": "17f2fe9e18607a1cc58847b6b0dbc6a75c97ca3d64a3ff0e9aa6d6cff9b25044"
+        },
+        {
+          "type": "plant",
+          "title": "Plant Cack-o-lantern",
+          "image": "/img/item_cactus_seed.png",
+          "cropID": "cackolantern",
+          "count": 2,
+          "tile": "1,3",
+          "hash": "1a39a697752d7d3ceee6717537bb034c462ac5690aeede0e72a3e208b53838fc"
+        },
+        {
+          "type": "plant",
+          "title": "Plant Starry Cactus",
+          "image": "/img/item_cactus_seed.png",
+          "cropID": "starry_cactus",
+          "count": 3,
+          "tile": "1,3",
+          "hash": "b2151f81c9c0f6c2bf7b552ab41e0b8a4037453c9e172982df89a02f0a70de09"
+        },
+        {
+          "type": "plant",
+          "title": "Plant Flowers",
+          "image": "/img/item_flower_seeds.png",
+          "cropID": "flowers",
+          "count": 41,
+          "tile": "1,3",
+          "hash": "5b3d2ab6c66079e303b8223dd2d5ef2bc12e1a1a49ab3a91809191de79ec02cb"
+        },
+        {
+          "type": "place-egg",
+          "title": "Place Blue Secretegg",
+          "image": "/img/item_secretegg_blue.png",
+          "eggID": "secretegg_blue",
+          "count": 22,
+          "tile": "1,3",
+          "hash": "b271a251d0ae9b213f01cc62ee1eab1605e29da653e59ee035eab1fad54bc132"
+        },
+        {
+          "type": "place-egg",
+          "title": "Place Green Secretegg",
+          "image": "/img/item_secretegg_green.png",
+          "eggID": "secretegg_green",
+          "count": 3,
+          "tile": "1,3",
+          "hash": "c34a14b75abc76373057de6f10d8906cda79e758309fff50f1f67d9882325082"
+        },
+        {
+          "type": "place-egg",
+          "title": "Place Red Secretegg",
+          "image": "/img/item_secretegg_red.png",
+          "eggID": "secretegg_red",
+          "count": 26,
+          "tile": "1,3",
+          "hash": "902fd12843f8ef0d82c4b9f6a475d798a146a227028c131012155c949e5487ac"
+        },
+        {
+          "type": "place-egg",
+          "title": "Place Gold Secretegg",
+          "image": "/img/item_secretegg_gold.png",
+          "eggID": "secretegg_gold",
+          "count": 2,
+          "tile": "1,3",
+          "hash": "644aaad75f0e7bf1556b2e0fe59f5486eb89f081a4a26b2754e0f9dcc87b315a"
+        },
+        {
+          "type": "use-waterbucket",
+          "title": "Fill with water",
+          "image": "/img/item_waterbucket.png",
+          "tile": "1,3",
+          "hash": "fc4c2f04f15f8c998d2ff0a4fc22729e22caa0c7fb339e1fbb1f7598868d9862"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "2,3",
+          "hash": "57729322066809de6b1d719c6b91d0b9838bf1518cec8d0f437726b9f0af2cb0"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "3,3",
+          "hash": "6d5c763788d03b43d91ad881167733433905f8e09e5fd4bf4934b2f1b78f5ab4"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "4,-1",
+          "hash": "6f405f21ca9b3d34f61f032ee9912c2fec01703eb1ef69977f23e35f03d61864"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "4,0",
+          "hash": "e64d0b6c213f98b43eb7f89e304be99a06a6ce2fdb47911703120b312795381f"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "4,1",
+          "hash": "be8bc4c10a2963d2bbb9f0cf5042c3528f1879d6584b482affb062961f8f76dc"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "4,2",
+          "hash": "282e51da22c6aae132aac3136916784d1f4b22c4bb7cc26afdaa42f6868c17fd"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "4,3",
+          "hash": "e133a296f2ea054911bd4d68cd0f4237139e67258e4720bbb706d5588f05ac79"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up Bone Vine",
+          "image": "/img/farm_shovel.png",
+          "tile": "-1,4",
+          "hash": "bbf2153fc3f12c9a71771855559342d39e5a042f5332bb81aa7c314e2883fa9a"
+        },
+        {
+          "type": "harvest",
+          "title": "Harvest Bone Vine",
+          "image": "/img/item_miniature_doghouse.png",
+          "tile": "-1,4",
+          "hash": "79b14b2a2006a255652a8ab544438a0d9ff0ccc874ba73925b31546c283f5c15"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up Collieflower",
+          "image": "/img/farm_shovel.png",
+          "tile": "0,4",
+          "hash": "2d4ef9f90eb9287496ca488e65c3d55a571060502e6bd8bb2e008352b098ead2"
+        },
+        {
+          "type": "harvest",
+          "title": "Harvest Collieflower",
+          "image": "/img/item_miniature_doghouse.png",
+          "tile": "0,4",
+          "hash": "de8b07e5bf98139c75632302ce9389a17c4e0e37414df2b9c350e4a55d4da277"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "1,4",
+          "hash": "81ea7f4bae54b84bb33010e8af484a58116e41737265cb23fde5ae5e7f709179"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "2,4",
+          "hash": "d6c6fdfd8cda41b0fd459fff9687e1354ca14d303641cfba55f582da1c36bfeb"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "3,4",
+          "hash": "9e03f0fa0fb12b1ca057e4d0a0bf01a74172fb28b770510bd6941ee7db47c295"
+        },
+        {
+          "type": "dig-up",
+          "title": "Dig up weed",
+          "image": "/img/farm_shovel.png",
+          "tile": "4,4",
+          "hash": "ab804a28048aecfa5ddd7bcefcaabe24a9a74d9c544eaccd4e4b392a8ae49fd5"
+        },
+        {
+          "type": "expand-farm",
+          "title": "Upgrade farm",
+          "hash": "expand-farm",
+          "image": "/img/paw.gif",
+          "tile": "999,999"
+        }
+      ],
+      "renderableTiles": [
+        {
+          "coords": "-1,-1",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_emptyplot2.png"
+            },
+            {
+              "image": "/img/item_appletree.png"
+            },
+            {
+              "image": "/img/farm_shiny.gif"
+            }
+          ],
+          "label": "Apple Tree (ready to harvest!)"
+        },
+        {
+          "coords": "-1,0",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_emptyplot2.png"
+            },
+            {
+              "image": "/img/crop_pomnapple_stage2.png"
+            },
+            {
+              "image": "/img/farm_shiny.gif"
+            }
+          ],
+          "label": "Pomnapple Plant (ready to harvest!)"
+        },
+        {
+          "coords": "-1,1",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_emptyplot2.png"
+            },
+            {
+              "image": "/img/crop_pomnapple_stage2.png"
+            },
+            {
+              "image": "/img/farm_shiny.gif"
+            }
+          ],
+          "label": "Pomnapple Plant (ready to harvest!)"
+        },
+        {
+          "coords": "0,-1",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_emptyplot2.png"
+            },
+            {
+              "image": "/img/crop_watermelon.png"
+            },
+            {
+              "image": "/img/farm_shiny.gif"
+            }
+          ],
+          "label": "Watermelon (ready to harvest!)"
+        },
+        {
+          "coords": "0,0",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "0,1",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "1,-1",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "1,0",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "1,1",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "2,-1",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "2,0",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "2,1",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "-1,2",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_emptyplot2.png"
+            },
+            {
+              "image": "/img/crop_pomnapple_stage2.png"
+            },
+            {
+              "image": "/img/farm_shiny.gif"
+            }
+          ],
+          "label": "Pomnapple Plant (ready to harvest!)"
+        },
+        {
+          "coords": "0,2",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_emptyplot2.png"
+            },
+            {
+              "image": "/img/crop_generic_stage1.png"
+            }
+          ],
+          "label": "Oak Tree (21 hours remaining)"
+        },
+        {
+          "coords": "1,2",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "2,2",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "3,-1",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "3,0",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "3,1",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "3,2",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "-1,3",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_emptyplot2.png"
+            },
+            {
+              "image": "/img/item_starry_cactus.png"
+            },
+            {
+              "image": "/img/farm_shiny.gif"
+            }
+          ],
+          "label": "Starry Cactus (ready to harvest!)"
+        },
+        {
+          "coords": "0,3",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "1,3",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_grass.png"
+            }
+          ],
+          "label": "Empty plot"
+        },
+        {
+          "coords": "2,3",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "3,3",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "4,-1",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "4,0",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "4,1",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "4,2",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "4,3",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "-1,4",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_emptyplot2.png"
+            },
+            {
+              "image": "/img/crop_bone_stage_3.png"
+            },
+            {
+              "image": "/img/farm_shiny.gif"
+            }
+          ],
+          "label": "Bone Vine (ready to harvest!)"
+        },
+        {
+          "coords": "0,4",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_emptyplot2.png"
+            },
+            {
+              "image": "/img/crop_collieflower_stage2.png"
+            },
+            {
+              "image": "/img/farm_shiny.gif"
+            }
+          ],
+          "label": "Collieflower (ready to harvest!)"
+        },
+        {
+          "coords": "1,4",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "2,4",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "3,4",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        },
+        {
+          "coords": "4,4",
+          "layers": [
+            {
+              "image": "/img/farm_grass_base_2.png"
+            },
+            {
+              "image": "/img/farm_weed.png"
+            }
+          ],
+          "label": "Weed"
+        }
+      ]
+    },
+    "upgradeInfo": null
+  },
+  "error": null,
+  "ts": "2026-11-11T01:01:09.000Z"
+}

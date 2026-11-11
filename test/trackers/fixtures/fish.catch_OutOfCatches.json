@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "input": {
+    "fishingAreaId": "lake",
+    "baitItemId": "pouch_of_prawns"
+  },
+  "result": {
+    "success": false,
+    "error": "Nothing seems to be biting today..."
+  },
+  "error": null,
+  "ts": "2026-11-08T02:54:14.000Z"
+}

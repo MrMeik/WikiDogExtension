@@ -1,0 +1,15 @@
+{
+  "procedure": "farm.doAction",
+  "input": {
+    "hash": "ab67e9e2320d84dc3ded54e683b51a940bd636c7536b52bcc2b633f43eeb3637"
+  },
+  "ok": true,
+  "result": {
+    "message": {
+      "text": "You found a Pyrite while digging!",
+      "image": "/img/item_pyrite.png"
+    }
+  },
+  "error": null,
+  "ts": "2026-11-11T01:24:28.000Z"
+}

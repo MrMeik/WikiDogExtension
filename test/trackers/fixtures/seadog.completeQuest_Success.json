@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "input": {
+    "questId": "dogres-dungeon"
+  },
+  "result": {
+    "rewardItems": [
+      {
+        "id": "sea_doubloon",
+        "name": "Sea Doubloon",
+        "image": "img/item_sea_doubloon.png"
+      }
+    ],
+    "rewardMoney": 2000
+  },
+  "error": null,
+  "ts": "2026-11-08T02:54:14.000Z"
+}

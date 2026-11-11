@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "WikiDog - DogOnline Action Logger",
-  "version": "0.2.0",
-  "description": "Unofficial extension that gathers information about DogOnline interactions with fishing, gachapon, mob kills, opening chests, the giant cactus, ToGBU and suspicious bush",
+  "version": "0.3.0",
+  "description": "Unofficial extension that gathers information about various DogOnline interactions",
   "permissions": ["storage"],
   "host_permissions": ["https://wikidogbackend.onrender.com/*"],
   "options_ui": {
@@ -15,7 +15,7 @@
     "128": "wikidog_icon-128.png"
   },
   "background": {
-    "service_worker": "src/background.js"
+    "service_worker": "src/uploading/background.js"
   },
   "content_scripts": [
     {
@@ -26,20 +26,7 @@
     },
     {
       "matches": ["https://dogonline.net/*"],
-      "js": [
-        "src/core/namespace.js",
-        "src/core/helpers.js",
-        "src/core/dispatcher.js",
-        "src/core/sync.js",
-        "src/context/weather.js",
-        "src/trackers/fishing.js",
-        "src/trackers/tower.js",
-        "src/trackers/gachapon.js",
-        "src/trackers/bush.js",
-        "src/trackers/cactus.js",
-        "src/trackers/togbu.js",
-        "src/core/bridge.js"
-      ],
+      "js": ["src/content.js"],
       "run_at": "document_idle",
       "world": "ISOLATED"
     }

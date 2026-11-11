@@ -1,0 +1,19 @@
+{
+  "ok": false,
+  "input": {
+    "questId": "dogres-dungeon"
+  },
+  "result": null,
+  "error": {
+    "message": "Quest mismatch.",
+    "code": -32603,
+    "data": {
+      "code": "INTERNAL_SERVER_ERROR",
+      "httpStatus": 500,
+      "path": "seadog.completeQuest",
+      "zodError": null,
+      "noActiveDog": false
+    }
+  },
+  "ts": "2026-11-08T02:54:14.000Z"
+}

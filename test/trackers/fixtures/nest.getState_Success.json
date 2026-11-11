@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "input": null,
+  "result": {
+    "questItem": {
+      "id": "funnyduck",
+      "name": "Funny Duck",
+      "image": "img/item_funnyduck.png"
+    },
+    "hasItem": true,
+    "chickenLevel": 105,
+    "poolLevel": 105
+  },
+  "error": null,
+  "ts": "2026-11-08T02:54:14.000Z"
+}

@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "input": {
+    "tokenItemId": "token_food"
+  },
+  "result": {
+    "message": "Gachapon makes a disgusting gurgling sound. Out pops a Swede!<br/><br/><img src=\"img/item_swede.png\"/>"
+  },
+  "error": null,
+  "ts": "2026-11-08T02:54:14.000Z"
+}

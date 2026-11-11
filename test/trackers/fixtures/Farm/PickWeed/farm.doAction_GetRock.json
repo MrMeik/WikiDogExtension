@@ -1,0 +1,15 @@
+{
+    "procedure": "farm.doAction",
+    "input": {
+        "hash": "70a011a627db053301996c3cc4ff646531370d56588f90d6fbe3b0c6d6aaa7c0"
+    },
+    "ok": true,
+    "result": {
+        "message": {
+            "text": "You found a Rock while digging!",
+            "image": "/img/item_rock.png"
+        }
+    },
+    "error": null,
+    "ts": "2026-11-11T00:23:03.000Z"
+}

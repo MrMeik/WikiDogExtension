@@ -1,0 +1,19 @@
+{
+  "procedure": "temple.completePuzzle",
+  "input": {
+    "game": "goldenbone",
+    "difficulty": 1
+  },
+  "ok": true,
+  "result": {
+    "message": "MrDog has a sense of Deja Vu...",
+    "rewardGiven": true,
+    "rewardItem": {
+      "id": "emerald_idol",
+      "name": "Emerald-Encrusted Idol",
+      "image": "img/items/trinkets/Trinket_Temple_Emestat.png"
+    }
+  },
+  "error": null,
+  "ts": "2026-11-10T05:27:36.000Z"
+}

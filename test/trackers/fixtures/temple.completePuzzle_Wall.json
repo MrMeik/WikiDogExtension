@@ -1,0 +1,19 @@
+{
+  "procedure": "temple.completePuzzle",
+  "input": {
+    "game": "wall",
+    "difficulty": 3
+  },
+  "ok": true,
+  "result": {
+    "message": "The statue's eyes seem to watch over MrDog.",
+    "rewardGiven": true,
+    "rewardItem": {
+      "id": "sandstone_block",
+      "name": "Sandstone Block",
+      "image": "img/item_sandstone_block.png"
+    }
+  },
+  "error": null,
+  "ts": "2026-11-10T05:26:41.000Z"
+}
