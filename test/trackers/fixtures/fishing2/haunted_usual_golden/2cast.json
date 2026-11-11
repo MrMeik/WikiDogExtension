@@ -1,0 +1,23 @@
+{
+  "procedure": "fish2.cast",
+  "input": {
+    "areaId": "spooky",
+    "baitId": "golden_grub",
+    "toolId": "rod_stick"
+  },
+  "ok": true,
+  "result": {
+    "ok": true,
+    "caught": {
+      "fishItemId": "draculaflounder",
+      "coordinationLevelsGained": 5,
+      "name": "Dracula Flounder",
+      "image": "img/items/fish/spooky/SpookyfishDracula.png",
+      "catchMessage": null
+    },
+    "foundItem": null,
+    "brokenTool": null
+  },
+  "error": null,
+  "ts": "2026-11-11T19:33:19.000Z"
+}
