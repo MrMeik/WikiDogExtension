@@ -51,6 +51,7 @@ function isCatchInput(data: unknown): data is CatchInput {
 export type Fish2Record = BaseTrackerRecord<"fish2"> & {
   weather: string;
   time_of_day: string;
+  weather_observed_at_utc: string;
   area_id: string;
   bait_id: string | null;
   tool_id: string | null;
@@ -73,6 +74,7 @@ function buildRecord(params: BuildRecordParams): Fish2Record {
     schema_version: 1,
     weather: params.weather.type,
     time_of_day: params.weather.timeOfDay,
+    weather_observed_at_utc: params.weather.observedAt,
     area_id: params.areaId,
     bait_id: params.baitId,
     tool_id: params.toolId,

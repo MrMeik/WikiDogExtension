@@ -1,11 +1,11 @@
-import { beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, test } from "vitest";
 import {
   loadTrackedSeries as loadSeries,
   loadTrackedCall as load,
   mockTrackerApi,
 } from "./helpers";
 import { Fish2Record, tracker } from "../../src/trackers/fishing2";
-import { TrackerApi } from "../../src/core/types";
+import { TrackedCall, TrackerApi } from "../../src/core/types";
 import { Context } from "../../src/core/context";
 
 const desertPawPrawn = () => loadSeries("fishing2/desert_paw_prawn/full");
@@ -21,6 +21,17 @@ const skyCage = () => loadSeries("fishing2/sky_cage/full");
 const woodsFeedTrap = () => loadSeries("fishing2/woods_feed_trap/full");
 const pastLimt = () => load("fishing2/fish2.catch_pastLimit");
 
+const testTimestamp = "2026-11-11T21:00:00.000Z";
+
+function noTs(calls: TrackedCall[]) {
+  return calls.map((call) => {
+    return {
+      ...call,
+      ts: testTimestamp,
+    };
+  });
+}
+
 function simpleResponse(overrides: Partial<Fish2Record>): Fish2Record {
   return {
     kind: "fish2",
@@ -30,6 +41,7 @@ function simpleResponse(overrides: Partial<Fish2Record>): Fish2Record {
     tool_id: null,
     weather: "snowy",
     time_of_day: "afternoon",
+    weather_observed_at_utc: testTimestamp,
     caught_type: "fish",
     caught_name: "",
     ...overrides,
@@ -159,7 +171,7 @@ describe("fishing2Tracker", () => {
 
       const results: Fish2Record[] = [];
 
-      for (const action of actionList()) {
+      for (const action of noTs(actionList())) {
         results.push(...tracked(action));
       }
 
