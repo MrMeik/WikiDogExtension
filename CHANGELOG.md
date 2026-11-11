@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.2.1] - 2026-11-10
+## [0.3.0] - 2026-11-10
 
 - Rewrote the application with typescript
 

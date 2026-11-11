@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "WikiDog - DogOnline Action Logger",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Unofficial extension that gathers information about various DogOnline interactions",
   "permissions": ["storage"],
   "host_permissions": ["https://wikidogbackend.onrender.com/*"],
