@@ -1,0 +1,13 @@
+{
+  "procedure": "randomEvent.current",
+  "input": null,
+  "ok": true,
+  "result": {
+    "id": "nobody-peeper",
+    "npcImage": "/img/future/nobodyface.png",
+    "dialogue": "Peeper pops up. But not a peep was heard.<br/><br/>This is getting awkward...",
+    "reward": null
+  },
+  "error": null,
+  "ts": "2026-11-11T02:34:33.000Z"
+}
