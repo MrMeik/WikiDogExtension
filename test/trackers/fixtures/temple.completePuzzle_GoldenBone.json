@@ -1,18 +1,19 @@
 {
-  "ok": true,
+  "procedure": "temple.completePuzzle",
   "input": {
     "game": "goldenbone",
     "difficulty": 1
   },
+  "ok": true,
   "result": {
-    "message": "MrDog hears the woofing of a hundred ancient dogs from long ago.",
+    "message": "MrDog has a sense of Deja Vu...",
     "rewardGiven": true,
     "rewardItem": {
-      "id": "sapphire_idol",
-      "name": "Sapphire-Encrusted Idol",
-      "image": "img/items/trinkets/Trinket_Temple_Sapstat.png"
+      "id": "emerald_idol",
+      "name": "Emerald-Encrusted Idol",
+      "image": "img/items/trinkets/Trinket_Temple_Emestat.png"
     }
   },
   "error": null,
-  "ts": "2026-11-08T02:54:14.000Z"
+  "ts": "2026-11-10T05:27:36.000Z"
 }

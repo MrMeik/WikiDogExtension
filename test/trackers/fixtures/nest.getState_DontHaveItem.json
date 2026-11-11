@@ -1,0 +1,17 @@
+{
+  "procedure": "nest.getState",
+  "input": null,
+  "ok": true,
+  "result": {
+    "questItem": {
+      "id": "pomna_colada",
+      "name": "Pomna Colada",
+      "image": "img/item_pomna_colada.png"
+    },
+    "hasItem": false,
+    "chickenLevel": 109,
+    "poolLevel": 109
+  },
+  "error": null,
+  "ts": "2026-11-10T05:31:45.000Z"
+}

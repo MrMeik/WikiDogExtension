@@ -2,3 +2,4 @@
 .amo-upload-uuid
 /node_modules
 /dist
+src/trackers/test.*

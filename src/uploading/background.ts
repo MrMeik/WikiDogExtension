@@ -1,5 +1,8 @@
-import { extensionApi } from "../core/extension-api";
-import { ExtensionCache } from "../core/types";
+import {
+  extensionApi,
+  loadFromStorage,
+  saveToStorage,
+} from "../core/extension-api";
 import { setup } from "./worker";
 
 const browser = extensionApi();
@@ -7,13 +10,8 @@ const worker = setup({
   now: () => Date.now(),
   fetch: (url, init) => fetch(url, init),
   storage: {
-    async getContext(key) {
-      const stored = await browser.storage.local.get<ExtensionCache>(key);
-      return stored[key];
-    },
-    setContext(key, value) {
-      return browser.storage.local.set<ExtensionCache>({ [key]: value });
-    },
+    getContext: loadFromStorage,
+    setContext: saveToStorage,
   },
   warn: (...args) => console.warn(...args),
 });

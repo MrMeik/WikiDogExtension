@@ -1,5 +1,9 @@
-import { extensionApi } from "../core/extension-api";
-import { ExtensionCache, ExtensionCacheChanges } from "../core/types";
+import {
+  extensionApi,
+  loadFromStorage,
+  saveToStorage,
+} from "../core/extension-api";
+import { ExtensionCacheChanges } from "../core/types";
 
 const browserApi = extensionApi();
 
@@ -8,10 +12,7 @@ const input = document.querySelector("#token") as HTMLInputElement;
 const status = document.querySelector("#status") as HTMLElement;
 
 async function refresh() {
-  const stored = await browserApi.storage.local.get<ExtensionCache>([
-    "apiToken",
-    "tokenState",
-  ]);
+  const stored = await loadFromStorage(["apiToken", "tokenState"]);
 
   const hasToken =
     typeof stored.apiToken === "string" && stored.apiToken.trim().length > 0;
@@ -32,7 +33,7 @@ form.addEventListener("submit", async (event) => {
     status.textContent = "Paste a token first.";
     return;
   }
-  await browserApi.storage.local.set<ExtensionCache>({ apiToken: token });
+  await saveToStorage("apiToken", token);
   input.value = "";
   await refresh();
 });

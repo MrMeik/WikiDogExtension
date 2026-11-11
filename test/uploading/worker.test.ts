@@ -12,6 +12,7 @@ function harness(responses: Array<Response | "throw">) {
     apiToken: "secret",
     tokenState: null!,
     outbox: null!,
+    debugLogging: null!,
   };
   const posts: unknown[] = [];
   const warnings: unknown[][] = [];

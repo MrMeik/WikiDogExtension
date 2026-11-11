@@ -1,13 +1,14 @@
 {
-  "ok": true,
+  "procedure": "temple.completePuzzle",
   "input": {
-    "game": "wall",
-    "difficulty": 2
+    "game": "goldenbone",
+    "difficulty": 1
   },
+  "ok": true,
   "result": {
-    "message": "A shadow passes over the door to the temple.",
+    "message": "A faint woof echoes through the temple halls.",
     "rewardGiven": false
   },
   "error": null,
-  "ts": "2026-11-08T02:54:14.000Z"
+  "ts": "2026-11-10T05:27:54.000Z"
 }

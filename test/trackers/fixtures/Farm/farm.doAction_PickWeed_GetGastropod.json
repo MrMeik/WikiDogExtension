@@ -1,0 +1,15 @@
+{
+  "procedure": "farm.doAction",
+  "input": {
+    "hash": "d6c6fdfd8cda41b0fd459fff9687e1354ca14d303641cfba55f582da1c36bfeb"
+  },
+  "ok": true,
+  "result": {
+    "message": {
+      "text": "You found a Gastropod Fossil while digging!",
+      "image": "/img/item_fossil_gastropod.png"
+    }
+  },
+  "error": null,
+  "ts": "2026-11-11T01:05:04.000Z"
+}

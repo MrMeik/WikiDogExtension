@@ -68,6 +68,7 @@ export type ExtensionCache = {
   outbox: unknown[];
   apiToken: string;
   tokenState: TokenState;
+  debugLogging: boolean;
 };
 
 export type ExtensionCacheChanges = {

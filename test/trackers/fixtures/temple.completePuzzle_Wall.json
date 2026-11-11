@@ -1,18 +1,19 @@
 {
-  "ok": true,
+  "procedure": "temple.completePuzzle",
   "input": {
     "game": "wall",
-    "difficulty": 2
+    "difficulty": 3
   },
+  "ok": true,
   "result": {
-    "message": "MrDog looks up at the dog temple and says a dog prayer.",
+    "message": "The statue's eyes seem to watch over MrDog.",
     "rewardGiven": true,
     "rewardItem": {
-      "id": "mini_temple",
-      "name": "Miniature Temple of Dog",
-      "image": "img/item_mini_temple.png"
+      "id": "sandstone_block",
+      "name": "Sandstone Block",
+      "image": "img/item_sandstone_block.png"
     }
   },
   "error": null,
-  "ts": "2026-11-08T02:54:14.000Z"
+  "ts": "2026-11-10T05:26:41.000Z"
 }

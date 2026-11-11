@@ -1,9 +1,10 @@
 import { Context } from "./context";
-import { extensionApi } from "./extension-api";
+import { extensionApi, loadFromStorage } from "./extension-api";
 import { parseResponseString, parseTrackedCallInput } from "./helpers";
 import {
   AnyTrackerRecord,
   DecoratedRecord,
+  ExtensionCacheChanges,
   IncomingTrackedCall,
   TrackedCall,
   TrackerApi,
@@ -84,7 +85,6 @@ export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
   const handlers = new Map<string, TrackerHandler<AnyTrackerRecord>[]>();
   const extVersion =
     options.extVersion ?? extensionApi().runtime.getManifest().version;
-
   const out = options.out ?? {
     log: (...args: unknown[]) => console.log(...args),
     warn: (...args: unknown[]) => console.warn(...args),
@@ -199,6 +199,18 @@ export function createApp(options: CreateAppOptions = {}): DogTrackerApp {
 
   return app;
 }
+
+loadFromStorage("debugLogging").then((loaded) => {
+  dogTracker.debugLogging = loaded === true;
+});
+
+extensionApi().storage.onChanged.addListener(
+  (changes: ExtensionCacheChanges, area: string) => {
+    if (area === "local" && changes.debugLogging) {
+      dogTracker.debugLogging = changes.debugLogging.newValue === true;
+    }
+  },
+);
 
 export const dogTracker = createApp();
 (globalThis as any).dogTracker = dogTracker;
