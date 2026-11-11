@@ -46,6 +46,15 @@ Supported platform are current chrome and firefox on desktop as well as firefox 
 
 One of my goals in creating this extension is to make the process of tracking a new aspect of DogOnline as easy as possible. I'll be working on a developer onboarding guide as time goes on but for the moment I can provide a high-level explanation.
 
-Each tracker (found in the `/trackers` directory) declares a list of trpc procedures it's interested in listening to and registers a handler to response to these calls when they happen. The handler can analyze the request and response body to decide if the data is worth logging to the backend. Creating a new tracked trpc call requires only adding a new file in the `/trackers` directory and adding it to the manifest. The core extension files handle the rest of the boilerplate required to route the calls to the trackers.
+Overall, the application is made up of a bunch of trackers that each focus on logging information about different activities in the game. Wrapping around the trackers is the core application which is responsible for routing requests to the trackers as well sending off noteworthy logs to a network background service. This background service is built to ensure the records eventually reach the backend for storage and aggregation for the wiki.
 
-On startup, the `hook.js` file creates a wrapper around all fetch calls made by the client. As each tracker file is imported it registers to the global file using the methods created in the `namespace.js` file. Once all trackers have been registered, `bridge.js` calls back to the event listener created in the initial hook which begins sending tracked trcp calls to the various trackers. When a record is emitted, it is sent out to a background service whose job it is to send it to the backend API. To ensure the record eventually gets to the backend it is first written to an outbox table.
+The application can be conceptually broken up into 4 main parts by the folder structure:
+
+- `src/page` contains the main page hook which wraps the fetching logic the game uses to pass into lower layers
+- `src/trackers` contains the trackers which declare which tRCP procedures they're interested in a handler to log information when they occur.
+- `src/core` the core application which handles routing fetch requests to the appropriate tracker and handing off logged game interactions to the transport layer
+- `scr/uploading` a background service worker which recieves messages to send off, queues them up with an outbox and posts them to the backend
+
+### Developing a new tracker
+
+Start with the `tracker.example.ts` as a template. When creating a tracker, first decide on which tRCP methods needs to be tracked to get information required for the logs. You can then define a handler that should attempt to parse the network requests into the format you are expecting (see the other trackers for examples, namely `togbu.ts` as it's pretty brief). Whatever values you return in the array will be sent off to the backend server. You can use the `api` passed into the trackers constructor to access application wide features. Notably, it contains methods to store context across calls in a global fashion. The weather is persisted this way so the fishing tracker can gain access to it. Finally, ensure that the file contains `export const tracker` or it will not be properly included in the built extension.

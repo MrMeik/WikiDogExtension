@@ -1,8 +1,16 @@
 # Changelog
 
+## [0.2.1] - 2026-11-10
+
+- Rewrote the application with typescript
+
+### Fixed
+
+- Background service not restarting when backend rejects requests with a 429
+
 ## [0.2.0] - 2026-11-03
 
-## Added
+### Added
 
 - Tracking for TOGBU
 - Tracking for The Giant Cactus
