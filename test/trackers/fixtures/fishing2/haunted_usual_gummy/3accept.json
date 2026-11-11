@@ -1,0 +1,11 @@
+{
+  "procedure": "fish2.acceptCatch",
+  "input": null,
+  "ok": true,
+  "result": {
+    "ok": true,
+    "fishItemId": "licoriceeel"
+  },
+  "error": null,
+  "ts": "2026-11-11T19:35:23.000Z"
+}

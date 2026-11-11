@@ -1,0 +1,23 @@
+{
+  "procedure": "fish2.cast",
+  "input": {
+    "areaId": "ocean",
+    "baitId": null,
+    "toolId": "cage_basic"
+  },
+  "ok": true,
+  "result": {
+    "ok": true,
+    "caught": {
+      "fishItemId": "musscle",
+      "coordinationLevelsGained": 0,
+      "name": "Musscle",
+      "image": "img/item_musscle.png",
+      "catchMessage": null
+    },
+    "foundItem": null,
+    "brokenTool": null
+  },
+  "error": null,
+  "ts": "2026-11-11T19:36:50.000Z"
+}

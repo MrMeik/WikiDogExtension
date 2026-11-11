@@ -1,0 +1,92 @@
+{
+  "procedure": "fish2.getState",
+  "input": {
+    "areaId": "desert"
+  },
+  "ok": true,
+  "result": {
+    "lost": false,
+    "areaId": "desert",
+    "dogName": "MrDog",
+    "name": "Desert Oasis",
+    "image": "explore/npc/FishingDesert.png",
+    "backButton": {
+      "url": "/explore?map=cactus",
+      "buttonTitle": "Back to Cactusland"
+    },
+    "dialogue": "A cool oasis in the scorching desert. Dangerous and strange fish are afoot!",
+    "dialogueId": null,
+    "weather": "snowy",
+    "timeOfDay": "afternoon",
+    "itemRequirement": {
+      "met": true,
+      "missingRequirementMessage": "Oh dear! MrDog can't handle the heat and danger of the desert. Perhaps if they knew <em>How to Survive in the Desert</em>, they could fish here..."
+    },
+    "ticket": null,
+    "fishingLimitRemaining": 95,
+    "fishingLimitMax": 100,
+    "pendingCatch": null,
+    "baits": [
+      {
+        "itemId": "wormbucket",
+        "name": "Bucket of Worms",
+        "image": "img/item_wormbucket.png",
+        "count": 39,
+        "meetsCoordination": true,
+        "requiredCoordination": 0
+      },
+      {
+        "itemId": "mound_of_minnows",
+        "name": "Mound of Minnows",
+        "image": "img/item_mound_of_minnows.png",
+        "count": 49,
+        "meetsCoordination": true,
+        "requiredCoordination": 3
+      },
+      {
+        "itemId": "cup_of_crickets",
+        "name": "Cup of Crickets",
+        "image": "img/item_cup_of_crickets.png",
+        "count": 26,
+        "meetsCoordination": true,
+        "requiredCoordination": 10
+      },
+      {
+        "itemId": "pouch_of_prawns",
+        "name": "Pouch of Prawns",
+        "image": "img/item_pouch_of_prawns.png",
+        "count": 308,
+        "meetsCoordination": true,
+        "requiredCoordination": 25
+      }
+    ],
+    "tools": [
+      {
+        "itemId": "cage_basic",
+        "usesBait": false,
+        "name": "Cage",
+        "image": "img/items/fishingtools/cage_basic.png",
+        "meetsCoordination": true,
+        "requiredCoordination": 0
+      },
+      {
+        "itemId": "rod_stick",
+        "usesBait": true,
+        "name": "Usual Rod",
+        "image": "img/items/fishingtools/rod_stick.png",
+        "meetsCoordination": true,
+        "requiredCoordination": 0
+      },
+      {
+        "itemId": "rod_temporal_trapper",
+        "usesBait": true,
+        "name": "Temporal Trapper",
+        "image": "img/items/fishingtools/cage_temporal_trapper.png",
+        "meetsCoordination": true,
+        "requiredCoordination": 75
+      }
+    ]
+  },
+  "error": null,
+  "ts": "2026-11-11T19:19:22.000Z"
+}

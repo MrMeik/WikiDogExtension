@@ -1,0 +1,15 @@
+{
+  "procedure": "fish2.cast",
+  "input": {
+    "areaId": "desert",
+    "baitId": null,
+    "toolId": "cage_basic"
+  },
+  "ok": true,
+  "result": {
+    "ok": false,
+    "reason": "limit-reached"
+  },
+  "error": null,
+  "ts": "2026-11-11T19:56:21.000Z"
+}

@@ -1,0 +1,84 @@
+{
+  "procedure": "fish2.getState",
+  "input": {
+    "areaId": "spooky"
+  },
+  "ok": true,
+  "result": {
+    "lost": false,
+    "areaId": "spooky",
+    "dogName": "MrDog",
+    "name": "Haunted Ship",
+    "image": "explore/npc/SpookySkipper.png",
+    "backButton": {
+      "url": "/explore?map=ocean",
+      "buttonTitle": "Back to The Open Seas"
+    },
+    "dialogue": "Boo! Welcome to the Haunted Cruise...",
+    "dialogueId": null,
+    "weather": "snowy",
+    "timeOfDay": "afternoon",
+    "itemRequirement": {
+      "met": true,
+      "missingRequirementMessage": null
+    },
+    "ticket": null,
+    "fishingLimitRemaining": 87,
+    "fishingLimitMax": 100,
+    "pendingCatch": null,
+    "baits": [
+      {
+        "itemId": "candycorngrub",
+        "name": "Candy Corn Grub",
+        "image": "img/items/bait/SpookybaitCorngub.png",
+        "count": 10,
+        "meetsCoordination": true,
+        "requiredCoordination": 15
+      },
+      {
+        "itemId": "gumchum",
+        "name": "Gummy Chum",
+        "image": "img/items/bait/SpookybaitGumchum.png",
+        "count": 10,
+        "meetsCoordination": true,
+        "requiredCoordination": 30
+      },
+      {
+        "itemId": "sourhook",
+        "name": "Sour-Powdered Hook",
+        "image": "img/items/bait/SpookybaitGummyhook.png",
+        "count": 10,
+        "meetsCoordination": true,
+        "requiredCoordination": 60
+      }
+    ],
+    "tools": [
+      {
+        "itemId": "cage_basic",
+        "usesBait": false,
+        "name": "Cage",
+        "image": "img/items/fishingtools/cage_basic.png",
+        "meetsCoordination": true,
+        "requiredCoordination": 0
+      },
+      {
+        "itemId": "rod_stick",
+        "usesBait": true,
+        "name": "Usual Rod",
+        "image": "img/items/fishingtools/rod_stick.png",
+        "meetsCoordination": true,
+        "requiredCoordination": 0
+      },
+      {
+        "itemId": "rod_temporal_trapper",
+        "usesBait": true,
+        "name": "Temporal Trapper",
+        "image": "img/items/fishingtools/cage_temporal_trapper.png",
+        "meetsCoordination": true,
+        "requiredCoordination": 75
+      }
+    ]
+  },
+  "error": null,
+  "ts": "2026-11-11T19:27:36.000Z"
+}

@@ -25,3 +25,7 @@ export function mockTrackerApi(
     ...overrides,
   };
 }
+
+export function loadTrackedSeries(scenarioName: string): TrackedCall[] {
+  return loadFromFixture(scenarioName) as TrackedCall[];
+}

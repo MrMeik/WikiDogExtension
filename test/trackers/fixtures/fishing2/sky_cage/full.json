@@ -1,0 +1,103 @@
+[
+  {
+    "procedure": "fish2.getState",
+    "input": {
+      "areaId": "sky"
+    },
+    "ok": true,
+    "result": {
+      "lost": false,
+      "areaId": "sky",
+      "dogName": "MrDog",
+      "name": "Sky Fishing",
+      "image": "explore/npc/AirSkipper2.png",
+      "backButton": {
+        "url": "/explore?map=ocean",
+        "buttonTitle": "Back to The Open Seas"
+      },
+      "dialogue": "Hrrm... The name's Skipper, and I used to be an Ace Pilot back in my youth, I'm happy they let me use my uniform for this gig...",
+      "dialogueId": "skippersky",
+      "weather": "snowy",
+      "timeOfDay": "afternoon",
+      "itemRequirement": {
+        "met": true,
+        "missingRequirementMessage": null
+      },
+      "ticket": null,
+      "fishingLimitRemaining": 45,
+      "fishingLimitMax": 100,
+      "pendingCatch": null,
+      "baits": [
+        {
+          "itemId": "balloon_hook",
+          "name": "Balloon Hook",
+          "image": "img/items/bait/Material_Balloonhook.png",
+          "count": 35,
+          "meetsCoordination": true,
+          "requiredCoordination": 20
+        },
+        {
+          "itemId": "wicked_skymetal_hook",
+          "name": "Wicked Skymetal Hook",
+          "image": "img/items/bait/Material_Skymetalhook.png",
+          "count": 320,
+          "meetsCoordination": true,
+          "requiredCoordination": 40
+        },
+        {
+          "itemId": "sky_tackle",
+          "name": "Sky Tackle",
+          "image": "img/items/bait/Material_Skyhook.png",
+          "count": 100,
+          "meetsCoordination": true,
+          "requiredCoordination": 60
+        }
+      ],
+      "tools": [
+        {
+          "itemId": "cage_basic",
+          "usesBait": false,
+          "name": "Cage",
+          "image": "img/items/fishingtools/cage_basic.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 0
+        },
+        {
+          "itemId": "rod_stick",
+          "usesBait": true,
+          "name": "Usual Rod",
+          "image": "img/items/fishingtools/rod_stick.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 0
+        },
+        {
+          "itemId": "rod_temporal_trapper",
+          "usesBait": true,
+          "name": "Temporal Trapper",
+          "image": "img/items/fishingtools/cage_temporal_trapper.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 75
+        }
+      ]
+    },
+    "error": null,
+    "ts": "2026-11-11T19:40:46.000Z"
+  },
+  {
+    "procedure": "fish2.cast",
+    "input": {
+      "areaId": "sky",
+      "baitId": null,
+      "toolId": "cage_basic"
+    },
+    "ok": true,
+    "result": {
+      "ok": true,
+      "caught": null,
+      "foundItem": null,
+      "brokenTool": null
+    },
+    "error": null,
+    "ts": "2026-11-11T19:40:52.000Z"
+  }
+]

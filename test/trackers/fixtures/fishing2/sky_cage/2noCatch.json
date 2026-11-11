@@ -1,0 +1,17 @@
+{
+  "procedure": "fish2.cast",
+  "input": {
+    "areaId": "sky",
+    "baitId": null,
+    "toolId": "cage_basic"
+  },
+  "ok": true,
+  "result": {
+    "ok": true,
+    "caught": null,
+    "foundItem": null,
+    "brokenTool": null
+  },
+  "error": null,
+  "ts": "2026-11-11T19:40:52.000Z"
+}

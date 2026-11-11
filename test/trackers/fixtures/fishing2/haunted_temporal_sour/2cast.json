@@ -1,0 +1,23 @@
+{
+  "procedure": "fish2.cast",
+  "input": {
+    "areaId": "spooky",
+    "baitId": "sourhook",
+    "toolId": "rod_temporal_trapper"
+  },
+  "ok": true,
+  "result": {
+    "ok": true,
+    "caught": {
+      "fishItemId": "skeletuna",
+      "coordinationLevelsGained": 2,
+      "name": "Skeletuna",
+      "image": "img/items/fish/spooky/SpookyfishTuna.png",
+      "catchMessage": null
+    },
+    "foundItem": null,
+    "brokenTool": null
+  },
+  "error": null,
+  "ts": "2026-11-11T19:28:01.000Z"
+}

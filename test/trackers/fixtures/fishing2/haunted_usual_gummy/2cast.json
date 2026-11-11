@@ -1,0 +1,23 @@
+{
+  "procedure": "fish2.cast",
+  "input": {
+    "areaId": "spooky",
+    "baitId": "gumchum",
+    "toolId": "rod_stick"
+  },
+  "ok": true,
+  "result": {
+    "ok": true,
+    "caught": {
+      "fishItemId": "licoriceeel",
+      "coordinationLevelsGained": 1,
+      "name": "Licorice Eel",
+      "image": "img/items/fish/spooky/SpookyfishLicorice.png",
+      "catchMessage": null
+    },
+    "foundItem": null,
+    "brokenTool": null
+  },
+  "error": null,
+  "ts": "2026-11-11T19:35:12.000Z"
+}

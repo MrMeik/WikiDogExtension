@@ -1,0 +1,21 @@
+{
+  "procedure": "fish2.cast",
+  "input": {
+    "areaId": "ocean",
+    "baitId": "wormbucket",
+    "toolId": null
+  },
+  "ok": true,
+  "result": {
+    "ok": true,
+    "caught": null,
+    "foundItem": {
+      "itemId": "bikini_red",
+      "name": "Red Bikini",
+      "image": "img/clothes_bikini_red.png"
+    },
+    "brokenTool": null
+  },
+  "error": null,
+  "ts": "2026-11-11T19:52:22.000Z"
+}
