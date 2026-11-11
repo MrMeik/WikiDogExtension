@@ -7,4 +7,5 @@ export type WeatherSnapshot = {
 export type Context = {
   weather: WeatherSnapshot;
   lastChestName: string;
+  weather2: WeatherSnapshot;
 };

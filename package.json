@@ -1,6 +1,6 @@
 {
   "name": "WikiDogExtension",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Unofficial extension that gathers information about various DogOnline interactions",
   "main": "index.js",
   "scripts": {

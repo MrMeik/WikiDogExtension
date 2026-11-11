@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.0] - 2026-11-11
+
+### Added
+
+- Support for the new fishing system
+
 ## [0.3.0] - 2026-11-10
 
 - Rewrote the application with typescript

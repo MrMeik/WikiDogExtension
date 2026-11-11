@@ -1,0 +1,129 @@
+[
+  {
+    "procedure": "fish2.getState",
+    "input": {
+      "areaId": "ocean"
+    },
+    "ok": true,
+    "result": {
+      "lost": false,
+      "areaId": "ocean",
+      "dogName": "MrDog",
+      "name": "Ocean Fishing Cruiser",
+      "image": "explore/npc/Skipper.png",
+      "backButton": {
+        "url": "/explore?map=cactus",
+        "buttonTitle": "Back to Cactusland"
+      },
+      "dialogue": "Hrrm. Good day to you, Pup. Me name's Skipper, and I got bait a plenty, and stories a plentier. Mmhm.",
+      "dialogueId": "skipperocean",
+      "weather": "snowy",
+      "timeOfDay": "afternoon",
+      "itemRequirement": null,
+      "ticket": {
+        "valid": true,
+        "price": 2000,
+        "noTicketMessage": "<p>Board the Ocean Fishing Cruiser! The cruiser will guide you around the best ocean fishing spots.</p><p>The ticket may be a hefty price... But the strange and valuable <strong>deep sea fish</strong> will make it worthwhile!</p>",
+        "money": 6000765
+      },
+      "fishingLimitRemaining": 63,
+      "fishingLimitMax": 100,
+      "pendingCatch": null,
+      "baits": [
+        {
+          "itemId": "wormbucket",
+          "name": "Bucket of Worms",
+          "image": "img/item_wormbucket.png",
+          "count": 39,
+          "meetsCoordination": true,
+          "requiredCoordination": 0
+        },
+        {
+          "itemId": "mound_of_minnows",
+          "name": "Mound of Minnows",
+          "image": "img/item_mound_of_minnows.png",
+          "count": 49,
+          "meetsCoordination": true,
+          "requiredCoordination": 3
+        },
+        {
+          "itemId": "cup_of_crickets",
+          "name": "Cup of Crickets",
+          "image": "img/item_cup_of_crickets.png",
+          "count": 26,
+          "meetsCoordination": true,
+          "requiredCoordination": 10
+        },
+        {
+          "itemId": "pouch_of_prawns",
+          "name": "Pouch of Prawns",
+          "image": "img/item_pouch_of_prawns.png",
+          "count": 307,
+          "meetsCoordination": true,
+          "requiredCoordination": 25
+        }
+      ],
+      "tools": [
+        {
+          "itemId": "cage_basic",
+          "usesBait": false,
+          "name": "Cage",
+          "image": "img/items/fishingtools/cage_basic.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 0
+        },
+        {
+          "itemId": "rod_stick",
+          "usesBait": true,
+          "name": "Usual Rod",
+          "image": "img/items/fishingtools/rod_stick.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 0
+        },
+        {
+          "itemId": "rod_temporal_trapper",
+          "usesBait": true,
+          "name": "Temporal Trapper",
+          "image": "img/items/fishingtools/cage_temporal_trapper.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 75
+        }
+      ]
+    },
+    "error": null,
+    "ts": "2026-11-11T19:36:38.000Z"
+  },
+  {
+    "procedure": "fish2.cast",
+    "input": {
+      "areaId": "ocean",
+      "baitId": null,
+      "toolId": "cage_basic"
+    },
+    "ok": true,
+    "result": {
+      "ok": true,
+      "caught": {
+        "fishItemId": "musscle",
+        "coordinationLevelsGained": 0,
+        "name": "Musscle",
+        "image": "img/item_musscle.png",
+        "catchMessage": null
+      },
+      "foundItem": null,
+      "brokenTool": null
+    },
+    "error": null,
+    "ts": "2026-11-11T19:36:50.000Z"
+  },
+  {
+    "procedure": "fish2.throwBack",
+    "input": null,
+    "ok": true,
+    "result": {
+      "ok": true
+    },
+    "error": null,
+    "ts": "2026-11-11T19:35:23.000Z"
+  }
+]

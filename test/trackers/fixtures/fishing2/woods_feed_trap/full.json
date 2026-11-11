@@ -1,0 +1,203 @@
+[
+  {
+    "procedure": "fish2.getState",
+    "input": {
+      "areaId": "woods"
+    },
+    "ok": true,
+    "result": {
+      "lost": false,
+      "areaId": "woods",
+      "dogName": "MrDog",
+      "name": "Dogwoods Fishing Hole",
+      "image": "explore/npc/WoodsSkipper.png",
+      "backButton": {
+        "url": "/explore?map=dogwoods",
+        "buttonTitle": "Back to Dogwoods"
+      },
+      "dialogue": "Hrrm... the name's Skipper, and for this gig they have me working in Monochrome... it's tough to put the makeup on, but it's honest livin'...",
+      "dialogueId": "skipperwoods",
+      "weather": "snowy",
+      "timeOfDay": "afternoon",
+      "itemRequirement": null,
+      "ticket": null,
+      "fishingLimitRemaining": 100,
+      "fishingLimitMax": 100,
+      "pendingCatch": null,
+      "baits": [
+        {
+          "itemId": "animal_feed",
+          "name": "Premuim Animal Feed",
+          "image": "img/items/bait/animal_feed.png",
+          "count": 10,
+          "meetsCoordination": true,
+          "requiredCoordination": 20
+        }
+      ],
+      "tools": [
+        {
+          "itemId": "cage_basic",
+          "usesBait": false,
+          "name": "Cage",
+          "image": "img/items/fishingtools/cage_basic.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 0
+        },
+        {
+          "itemId": "cage_deepsea_explorer_pod",
+          "usesBait": false,
+          "name": "Deepsea Explorer Pod",
+          "image": "img/items/fishingtools/cage_deepsea.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 50
+        },
+        {
+          "itemId": "rod_stick",
+          "usesBait": true,
+          "name": "Usual Rod",
+          "image": "img/items/fishingtools/rod_stick.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 0
+        },
+        {
+          "itemId": "rod_ancient_angler",
+          "usesBait": true,
+          "name": "Time-Displaced Rod",
+          "image": "img/items/fishingtools/rod_ancient_angler.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 15
+        },
+        {
+          "itemId": "rod_temporal_trapper",
+          "usesBait": true,
+          "name": "Temporal Trapper",
+          "image": "img/items/fishingtools/cage_temporal_trapper.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 75
+        },
+        {
+          "itemId": "trap_woods",
+          "usesBait": true,
+          "name": "Simple Trap",
+          "image": "img/items/fishingtools/trap_woods.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 50
+        }
+      ]
+    },
+    "error": null,
+    "ts": "2026-11-11T21:23:30.000Z"
+  },
+  {
+    "procedure": "fish2.cast",
+    "input": {
+      "areaId": "woods",
+      "baitId": "animal_feed",
+      "toolId": "trap_woods"
+    },
+    "ok": true,
+    "result": {
+      "ok": true,
+      "caught": {
+        "fishItemId": "fox_fish",
+        "coordinationLevelsGained": 1,
+        "name": "Fox Fish",
+        "image": "img/items/fish/woods/FopsFish.png",
+        "catchMessage": null
+      },
+      "foundItem": null,
+      "brokenTool": null
+    },
+    "error": null,
+    "ts": "2026-11-11T21:23:38.000Z"
+  },
+  {
+    "procedure": "fish2.getState",
+    "input": {
+      "areaId": "woods"
+    },
+    "ok": true,
+    "result": {
+      "lost": false,
+      "areaId": "woods",
+      "dogName": "MrDog",
+      "name": "Dogwoods Fishing Hole",
+      "image": "explore/npc/WoodsSkipper.png",
+      "backButton": {
+        "url": "/explore?map=dogwoods",
+        "buttonTitle": "Back to Dogwoods"
+      },
+      "dialogue": "Hrrm... the name's Skipper, and for this gig they have me working in Monochrome... it's tough to put the makeup on, but it's honest livin'...",
+      "dialogueId": "skipperwoods",
+      "weather": "snowy",
+      "timeOfDay": "afternoon",
+      "itemRequirement": null,
+      "ticket": null,
+      "fishingLimitRemaining": 93,
+      "fishingLimitMax": 100,
+      "pendingCatch": null,
+      "baits": [
+        {
+          "itemId": "animal_feed",
+          "name": "Premuim Animal Feed",
+          "image": "img/items/bait/animal_feed.png",
+          "count": 9,
+          "meetsCoordination": true,
+          "requiredCoordination": 20
+        }
+      ],
+      "tools": [
+        {
+          "itemId": "cage_basic",
+          "usesBait": false,
+          "name": "Cage",
+          "image": "img/items/fishingtools/cage_basic.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 0
+        },
+        {
+          "itemId": "cage_deepsea_explorer_pod",
+          "usesBait": false,
+          "name": "Deepsea Explorer Pod",
+          "image": "img/items/fishingtools/cage_deepsea.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 50
+        },
+        {
+          "itemId": "rod_stick",
+          "usesBait": true,
+          "name": "Usual Rod",
+          "image": "img/items/fishingtools/rod_stick.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 0
+        },
+        {
+          "itemId": "rod_ancient_angler",
+          "usesBait": true,
+          "name": "Time-Displaced Rod",
+          "image": "img/items/fishingtools/rod_ancient_angler.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 15
+        },
+        {
+          "itemId": "rod_temporal_trapper",
+          "usesBait": true,
+          "name": "Temporal Trapper",
+          "image": "img/items/fishingtools/cage_temporal_trapper.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 75
+        },
+        {
+          "itemId": "trap_woods",
+          "usesBait": true,
+          "name": "Simple Trap",
+          "image": "img/items/fishingtools/trap_woods.png",
+          "meetsCoordination": true,
+          "requiredCoordination": 50
+        }
+      ]
+    },
+    "error": null,
+    "ts": "2026-11-11T21:24:05.000Z"
+  }
+]
