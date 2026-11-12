@@ -1,0 +1,16 @@
+{
+  "procedure": "randomEvent.current",
+  "input": null,
+  "ok": true,
+  "result": {
+    "id": "fashion-mimosa",
+    "npcImage": "/img/npc_fashion.png",
+    "dialogue": "\"This is Mimosa Ruffle. I heard your fashion senses are... lacking to say the least.<br/><br/>Please stop by the Fashion Hut in Dogtown as soon as possible. We've got some work to do.\"",
+    "reward": {
+      "name": "Clothes Token",
+      "image": "/img/item_token_clothes.png"
+    }
+  },
+  "error": null,
+  "ts": "2026-11-11T02:34:33.000Z"
+}
