@@ -8,39 +8,15 @@ Once you install the extension it will begin logging information to your console
 
 ## What is tracked and where can it be found
 
-This version of the extension tracks Mob kills, Chest opens, Gachapon opens and Fishing caches. The data is uploaded to this [google sheet](https://docs.google.com/spreadsheets/d/1SDBlNBxuKEcM4mcVM6eR3U7lMW6jObvjGunr-V6KZ1o/edit?usp=sharing).
+This version of the extension tracks interactions with the Tower (including Mobs and Chests), Gachapon, Suspicious Bush, Treat or Get Blown Up and the Giant Cactus. The data is uploaded to this [google sheet](https://docs.google.com/spreadsheets/d/1SDBlNBxuKEcM4mcVM6eR3U7lMW6jObvjGunr-V6KZ1o/edit?usp=sharing).
 
 ## Installing the extension
 
 Supported platform are current chrome and firefox on desktop as well as firefox on mobile
 
-### Chrome Desktop Installation
-
-1. Download the latest Chrome release in the [releases section](https://github.com/MrMeik/WikiDogExtension/releases) and unzip the zipped folder.
-2. Navigate to the extensions page at `chrome://extensions`.
-3. Enable `Developer mode` via the toggle in the top right corner of the page.
-4. Click `Load unpacked` to and select the folder you unzipped in step 1.
-5. Click the `Details` button and then the `Extension options` button to be brought to a page to enter your API key.
-6. Paste in your token and click `Save token` to complete setup.
-7. Refresh your DogOnline page and your gameplay statistics will now be reported automatically.
-
-### Firefox Mobile Installation
-
-1. Download the latest firefox release from the [releases section](https://github.com/MrMeik/WikiDogExtension/releases) on Github.
-2. Next, you will need to `enable developer mode` in firefox. First open up firefox on mobile and click the `triple dots icon` to open the Firefox menu and select the `Settings` option.
-3. Click on the `About Firefox` option from the settings menu.
-4. Tap the `Firefox Logo` 5 times in succession to `enable developer mode`. You should see a message at the bottom of the screen to indicate success and will also now see more options in your settings menus.
-5. Go back to `Settings` and click `Install extension from file` from under the `Advanced` options section.
-6. Select the downloaded release `.xpi` file and click `Add` when prompted. You will then be brought to the WikiDog extension page.
-7. You will now need input your API token (currently API tokens must be requested directly from MrMeik) to begin sending data to the backend. To do so, click the `Settings` button on the WikiDog extension page to be brought to a page where you can enter your API token. `Paste in your token` and press `Save token`.
-8. Under the `Pemissions` menu on the WikiDog extension page ensure each optional permission is selected.
-9. You should now be able to play DogOnline like normal and gameplay statistics will be reported automatically.
-
-#### Debugging Steps
-
-- If you need to access the settings for the WikiDog extension again, click the `triple dots icon` and click the `extensions` option to see your installed extensions. `WikiDog` can be found in the list there.
-- Ensure that you have saved your API token for the extension after installation. Follow step 7 for details.
-- Under the `Permissions` menu in the WikiDog extension page, ensure that both of the optional permissions are enabled as data can only be sent to the backend if the `wikidogbackend` url is enabled.
+- Chrome - Desktop [Guide](docs/supported_platforms/chrome-desktop.md)
+- Firefox - Desktop [Guide](docs/supported_platforms/firefox-desktop.md)
+- Firefox - Android [Guide](docs/supported_platforms/firefox-android.md)
 
 ## Looking to contribute?
 
